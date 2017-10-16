@@ -1,0 +1,24 @@
+{
+  "name": "b40-less-docs",
+  "version": "1.0.0",
+  "description": "Docs for the JavelinCMS LESS Framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/mattmilburn/b40-less-docs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattmilburn/b40-less-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mattmilburn/b40-less-docs/issues"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "less"
+  ],
+  "author": "Matt Milburn",
+  "license": "UNLICENSED"
+}
