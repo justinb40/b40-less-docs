@@ -1,0 +1,56 @@
+<div class="article-header">
+    <h2 class="article-title">form-control-focus <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.form-control-focus(@color)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set border color and focus ring color for the <code>:focus</code> state of form controls.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>color</code></th>
+                <td>Color for the border and focus ring color.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.form-control-example {
+    .form-control-focus(#08c);
+}
+
+
+// Will output...
+.form-control-example:focus {
+    border-color: #08c;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 136, 204, .6);
+}
+</pre>
+</div>

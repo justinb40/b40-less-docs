@@ -1,0 +1,110 @@
+<div class="article-header">
+    <h1 class="article-title">Gallery <small>module</small></h1>
+    
+    <div class="article-subtitle">
+        <code>#javelin-gallery</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>The core Gallery module doesn't require much styling unless you are working with a unique usage of the module. Otherwise, you're mainly just styling the spacing of the module items.</p>
+    
+    <div class="article-tip">
+        <h4>Limiting items per row</h4>
+        <p>It is common to enforce a specific number of items per row in a list of gallery items. This can be applied globally by setting a number value for the <code>@gallery-column-count</code> variable. Or this can be applied individually with the use of the <code>#javelin-gallery.set-columns()</code> mixin <em>(see below)</em>.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/javelin/gallery.less</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>caption</code></th>
+                <td>The text block underneath the image block for a gallery item. This text DOES show up in the lightbox display.</td>
+            </tr>
+            <tr>
+                <th><code>description</code></th>
+                <td>The text block underneath the caption block for a gallery item. This text does NOT show up in the lightbox display.</td>
+            </tr>
+            <tr>
+                <th><code>image</code></th>
+                <td>Image block for a gallery item.</td>
+            </tr>
+            <tr>
+                <th><code>item</code></th>
+                <td>A single gallery item in a list of gallery items.</td>
+            </tr>
+            <tr>
+                <th><code>list</code></th>
+                <td>List container for the list of gallery items.</td>
+            </tr>
+            <tr>
+                <th><code>self</code></th>
+                <td>Container for the gallery index view.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>set-columns()</h3>
+    <p><code>#javelin-gallery.set-columns(@count)</code></p>
+    <p>This mixin <em>does not</em> set sizing metrics for gallery items. Instead, it helps control the flow of gallery items with the use of <code>clear</code> and the <code>:nth-child</code> selector so items of varying heights stay within their respective rows.</p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>count</code></th>
+                <td>Total number of gallery items per row.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.gallery-example {
+    #javelin-gallery.set-columns(4);
+}
+
+
+// Will output...
+.gallery-example li.javelin_galleryItem:nth-child(4n+1) {
+    clear: left;
+}
+.gallery-example li.javelin_galleryItem:nth-child(4n+4) {
+    clear: right;
+}
+</pre>
+</div>

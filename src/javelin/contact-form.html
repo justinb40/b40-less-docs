@@ -1,0 +1,55 @@
+<div class="article-header">
+    <h1 class="article-title">Contact Form <small>module</small></h1>
+    
+    <div class="article-subtitle">
+        <code>#javelin-contact</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>The core contact module in Javelin does not have many classified elements like other modules do. Instead, we have to style to the structure of the markup in the module. Furthermore, the contact module uses ID's on its container and input elements, which limits our usage of the module to just one per page and goes against the paradigm of using classes for styling as opposed to IDs.</p>
+    
+    <div class="article-tip">
+        <h4>Container Width</h4>
+        <p>The container for this module will take on a width of <code>50%</code> by default to handle using this module inside of a wide page layout. This can be changed by overriding the <code>@contact-form-width</code> var.</p>
+    </div>
+    
+    <div class="article-tip">
+        <h4>Input Field Sizes</h4>
+        <p>A default width of <code>100%</code> is applied to input fields by using the <code>form-control</code> helper as a mixin. Some fields take on a shorter width to better suit shorter lengths of expected input.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/javelin/contact.less</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>form-fields</code></th>
+                <td>The <code>input</code>, <code>select</code> and <code>textarea</code> elements within a contact form.</td>
+            </tr>
+            <tr>
+                <th><code>self</code></th>
+                <td>Container of a contact form.</td>
+            </tr>
+            <tr>
+                <th><code>submit-button</code></th>
+                <td>"Submit" button of a contact form.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

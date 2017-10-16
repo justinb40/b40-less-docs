@@ -1,0 +1,33 @@
+<div class="article-header">
+    <h1 class="article-title">Minimum Document Requirements</h1>
+</div>
+
+<div class="article-description">
+    <h3>HTML5 Standards</h3>
+    <p>HTML documents should conform to HTML5 standards. Some main points to cover are:</p>
+    <ul>
+        <li>Doctype should be set to <code>&lt;!DOCTYPE html&gt;</code>.</li>
+        <li>Specify character encoding with <code>&lt;meta charset="utf-8"&gt;</code>.</li>
+        <li>Include <code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code> in the document head to make IE render using the latest version on the machine and avoid the dreaded "compatibility mode".</li>
+        <li>Avoid self closing slashes (i.e. <code>&lt;img src="" /&gt;</code>) for elements like <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code> and <code>&lt;meta&gt;</code>. HTML5 does not require them.</li>
+        <li>Avoid specifying the type attribute for <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> elements. HTML5 will assume <code>type="text/javascript"</code> and <code>type="text/css"</code> by default.</li>
+    </ul>
+</div>
+
+<div class="article-description">
+    <h3>Responsive and Mobile Requirements</h3>
+    <p>When you are developing responsive or mobile projects, you will need to set either <code>@is-responsive</code> or <code>@is-mobile</code> to <strong>true</strong> and add this <code>&lt;meta&gt;</code> tag to the <code>&lt;head&gt;</code>:</p>
+<pre prism="markup">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</pre>
+</div>
+
+<div class="article-description">
+    <h3>Supporting IE8 (in a lazy, but good enough way)</h3>
+    <p>While we don't make a strong point to support IE8 anymore, its still easy to make them feel somewhat special by including the following script inside of an IE conditional tag. Any version of IE that came before IE9 will gain polyfills such as CSS3 selectors, media query breakpoints and additional polyfills for HTML5 and ECMAScript 5 usage.</p>
+<pre prism="markup">
+&lt;!--[if lt IE 9]&gt;
+&lt;script src="public/scripts/ie8-polyfills.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</pre>
+</div>

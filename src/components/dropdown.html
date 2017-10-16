@@ -1,0 +1,244 @@
+<div class="article-header">
+    <h1 class="article-title">Dropdown <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Create custom dropdown menus similar to the HTML <code>&lt;select&gt;</code> element.</p>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>This component relies on additional logic to handle toggling the dropdown menu, broadcasting dropdown events and storing the dropdown value. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.dropdown.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+    
+    <div class="article-tip">
+        <h4>Avoid using as a standard form component</h4>
+        <p>Using this component in web forms is not suggested as it does not offer the full set of usability features, accessibility features and testing background that comes with the Native <code>&lt;select&gt;</code> element. It should be reserved or special use cases, typically for interactive components that don’t inhibit potential conversions throughout the user experience.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>dropdown</code></th>
+                <td>Container for the dropdown.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-label</code></th>
+                <td>The always-visible part of the dropdown that holds the current selected option's label value.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-label-text</code></th>
+                <td>The wrapper class for the text portion of the <code>.dropdown-label</code>.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-caret</code></th>
+                <td>The arrow within <code>.dropdown-label</code> used to indicate dropdown functionality.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-options</code></th>
+                <td>The menu that drops down when the user activates the dropdown.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-option</code></th>
+                <td>A clickable <code>&lt;li&gt;</code> element used in place of the standard <code>&lt;option&gt;</code> element. Use the <code>data-value</code> attribute to store the option's value instead of the standard <code>value</code> attribute.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-slug</code></th>
+                <td>A clickable option that is used as an empty option suggesting <em>no input</em>. Clicking this option unsets the value of the dropdown back to <code>undefined</code>.</td>
+            </tr>
+            <tr>
+                <th><code>dropdown-group</code></th>
+                <td>A non-clickable <code>&lt;li&gt;</code> element used to add group labels between dropdown options. This element should be a sibling of <code>.dropdown-option</code>. It does not wrap or contain any other elements.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>JavaScript Attributes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>data-target</code></th>
+                <td>Set the value of this attribute on the <code>.dropdown</code> container element to the ID of the hidden input nested within the dropdown as well as the value for the <code>for</code> attribute on the <code>.dropdown-label</code> element. Be sure to include the hash <code>#</code> in the <code>data-target</code> value.</td>
+            </tr>
+            <tr>
+                <th><code>data-value</code></th>
+                <td>Set the value of this attribute on the <code>.dropdown-option</code> element to store the option's value. Empty strings are allowed but the absence of this attribute on an option will have a value of <code>undefined</code>. Always omit this attribute on the <code>.dropdown-slug</code> element.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>Class Methods</h3>
+    <p>These methods are available on the <code>event.dropdown</code> object passed into event callbacks. This is an actual instance of the dropdown class and it has a list of methods you can use in your own programming.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>deselect()</code></th>
+                <td>Deselect any selected options and set the dropdown value to <code>undefined</code>.</td>
+            </tr>
+            <tr>
+                <th><code>get()</code></th>
+                <td>Return the jQuery extended element associated with the dropdown.</td>
+            </tr>
+            <tr>
+                <th><code>getSelected()</code></th>
+                <td>Return the selected option as a data object containing the <code>element</code>, <code>label</code> and <code>value</code>.</td>
+            </tr>
+            <tr>
+                <th><code>hide()</code></th>
+                <td>Hide the dropdown menu.</td>
+            </tr>
+            <tr>
+                <th><code>setByOption(target)</code></th>
+                <td>Set the selected option by providing the <code>target</code> element that would normally be clicked by the user in the dropdown menu.</td>
+            </tr>
+            <tr>
+                <th><code>setByValue(value)</code></th>
+                <td>Set the selected option by providing the <code>value</code> that matches an option in the dropdown menu. If there are multiple options with the same value, the first option found with that value will be used.</td>
+            </tr>
+            <tr>
+                <th><code>show()</code></th>
+                <td>Show the dropdown menu.</td>
+            </tr>
+            <tr>
+                <th><code>toggle()</code></th>
+                <td>Toggle the dropdown menu.</td>
+            </tr>
+            <tr>
+                <th><code>val()</code></th>
+                <td>Return the dropdown's current value.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="dropdown" data-target="#dropdown-example-input"&gt;
+    &lt;label for="dropdown-example-input" class="dropdown-label"&gt;
+        &lt;span class="dropdown-label-text"&gt;Any&lt;/span&gt;
+        &lt;span class="dropdown-caret"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;div class="dropdown-options"&gt;
+        &lt;ul&gt;
+            &lt;li class="dropdown-option dropdown-slug active"&gt;Any (slug option)&lt;/li&gt;
+            
+            &lt;li class="dropdown-group"&gt;Group 1&lt;/li&gt;
+            &lt;li data-value="0" class="dropdown-option"&gt;Option 1&lt;/li&gt;
+            &lt;li data-value="1" class="dropdown-option"&gt;Option 2 (duplicate values)&lt;/li&gt;
+            &lt;li data-value="1" class="dropdown-option"&gt;Option 3 (duplicate values)&lt;/li&gt;
+            &lt;li data-value="" class="dropdown-option"&gt;Option 4 (empty string)&lt;/li&gt;
+            &lt;li data-value class="dropdown-option"&gt;Option 5 (no attribute value)&lt;/li&gt;
+            
+            &lt;li class="dropdown-group"&gt;Group 2&lt;/li&gt;
+            &lt;li data-value="5" class="dropdown-option"&gt;Option 6&lt;/li&gt;
+            &lt;li data-value="6" class="dropdown-option"&gt;Option 7&lt;/li&gt;
+            &lt;li data-value="7" class="dropdown-option"&gt;Option 8&lt;/li&gt;
+            &lt;li data-value="8" class="dropdown-option"&gt;Option 9&lt;/li&gt;
+            &lt;li data-value="9" class="dropdown-option"&gt;Option 10&lt;/li&gt;
+            
+            &lt;li class="dropdown-group"&gt;Group 3&lt;/li&gt;
+            &lt;li data-value="120" class="dropdown-option"&gt;Option 11&lt;/li&gt;
+            &lt;li data-value="141" class="dropdown-option"&gt;Option 12&lt;/li&gt;
+            &lt;li data-value="124" class="dropdown-option"&gt;Option 13&lt;/li&gt;
+            &lt;li data-value="162" class="dropdown-option"&gt;Option 14&lt;/li&gt;
+            &lt;li data-value="123" class="dropdown-option"&gt;Option 15&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;input type="hidden" name="dropdown-example" id="dropdown-example-input" value=""&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>JavaScript Events</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40.dropdown.change</code></th>
+                <td>Event triggered when the value of the dropdown changes to a different value.</td>
+            </tr>
+            <tr>
+                <th><code>b40.dropdown.hide</code></th>
+                <td>Event triggered when the dropdown menu is dismissed.</td>
+            </tr>
+            <tr>
+                <th><code>b40.dropdown.show</code></th>
+                <td>Event triggered when the dropdown menu is revealed.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="article-example">
+    <h3>Using Events</h3>
+<pre prism="javascript">
+$('.dropdown').bind('b40.dropdown.change', function(event) {
+    // The getSelected() method returns an object with 3 properties...
+    var data = event.dropdown.getSelected();
+    
+    // ...the label and value for the selected option
+    console.log(data.label + ': ' + data.value);
+    
+    // ...and a reference to the element associated with the selected option
+    console.log(data.target);
+});
+</pre>
+</div>

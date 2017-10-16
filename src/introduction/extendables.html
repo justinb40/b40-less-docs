@@ -1,0 +1,71 @@
+<div class="article-header">
+    <h1 class="article-title">Extendables</h1>
+</div>
+
+<div class="article-description">
+    <p>These classes are not actually defined as mixins. They are imported by <em>(reference)</em> and are meant to be <strong>extended</strong> rather than called as a mixin.</p>
+    <ul class="examples">
+        <li><a href="#extend-vs-mixin">Extend vs. Mixin</a></li>
+        <li><a href="#border-box-sizing">border-box-sizing</a></li>
+        <li><a href="#clearfix">clearfix</a></li>
+    </ul>
+    
+    <h2>Extend vs. Mixin</h2>
+    <p>Calling a class as a mixin will create a new instance of the rules within it. However, extending the class adds the <strong>selector</strong> to an ongoing list of selectors and applies the rules from the mixin only one time, thus significantly reducing code bloat.</p>
+    
+    
+    <h4>Anti-pattern</h4>
+<pre prism="less">
+.block1 {
+    .border-box-sizing();
+}
+.block2 {
+    .border-box-sizing();
+}
+.block3 {
+    .border-box-sizing();
+}
+
+
+/* will output... */
+.block1 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.block2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.block3 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</pre>
+    
+    
+    <h4>Preferred pattern</h4>
+<pre prism="less">
+.block1 {
+    &:extend(.border-box-sizing all);
+}
+.block2 {
+    &:extend(.border-box-sizing all);
+}
+.block3 {
+    &:extend(.border-box-sizing all);
+}
+
+
+/* will output... */
+.block1,
+.block2,
+.block3 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</pre>
+</div>

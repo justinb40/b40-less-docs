@@ -1,0 +1,104 @@
+<div class="article-header">
+    <h1 class="article-title">Search Bar <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>This component relies on additional logic to handle toggling the collapsed state of the search bar. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.search-collapse.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>search-bar</code></th>
+                <td>Container for the search bar.</td>
+            </tr>
+            <tr>
+                <th><code>search-bar-input</code></th>
+                <td>The text input element in the search bar.</td>
+            </tr>
+            <tr>
+                <th><code>search-bar-btn</code></th>
+                <td>The button element in the search bar.</td>
+            </tr>
+            <tr>
+                <th><code>search-bar-collapsible</code></th>
+                <td>An additional class to attach to the <code>search-bar</code> class.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="search-bar search-bar-collapsible"&gt;
+    &lt;form action="/search/" method="get"&gt;
+        &lt;input type="text" name="query" class="search-bar-input" value="" placeholder="Search..."&gt;
+        &lt;button class="search-bar-btn" type="submit"&gt;
+            &lt;span class="icon icon-search"&gt;&lt;/span&gt;
+            &lt;span class="sr"&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>JavaScript Events</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40.search.expanded</code></th>
+                <td>Broadcast when the search bar is expanded.</td>
+            </tr>
+            <tr>
+                <th><code>b40.search.collapsed</code></th>
+                <td>Broadcast when the search bar is collapsed.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Using Events</h3>
+<pre prism="javascript">
+// Bind to the `document` to listen for search bar events
+$('body').bind('b40.search.expanded', function() {
+    // code goes here
+});
+</pre>
+</div>

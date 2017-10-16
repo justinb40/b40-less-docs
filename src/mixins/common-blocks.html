@@ -1,0 +1,62 @@
+<div class="article-header">
+    <h2 class="article-title">common-blocks <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.common-blocks(@rules)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply a set of rules to the following selector: <code>p, blockquote, ol, ul, table</code>.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>rules</code></th>
+                <td>The styling rules to apply to the common blocks selector.</td>
+                <td>ruleset</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.index-section-1 {
+    .common-blocks({
+        &:last-child {
+            margin-bottom: 0;
+        }
+    });
+}
+
+
+// Will output...
+.index-section-1 p:last-child,
+.index-section-1 blockquote:last-child,
+.index-section-1 ol:last-child,
+.index-section-1 ul:last-child,
+.index-section-1 table:last-child {
+    margin-bottom: 0;
+}
+</pre>
+</div>

@@ -1,0 +1,60 @@
+<div class="article-header">
+    <h2 class="article-title">progress-bar-size <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.progress-bar-size(@height; @border-radius)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set sizing metrics for a progress bar.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>height</code></th>
+                <td>Total height of the progress bar.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>border-radius</code></th>
+                <td>Border radius.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-progress-bar {
+    .progress-bar-size(30px; 8px);
+}
+
+
+// Will output...
+.example-progress-bar {
+    height: 30px;
+    border-radius: 8px;
+}
+</pre>
+</div>

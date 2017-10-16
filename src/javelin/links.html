@@ -1,0 +1,144 @@
+<div class="article-header">
+    <h1 class="article-title">Links <small>module</small></h1>
+    
+    <div class="article-subtitle">
+        <code>#javelin-links</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>By default, the core Links module doesn't generate any default styles from the LESS framework and it also doesn't have any associated variables. However, it does have a short list of mixin selectors and can be used to easily style a list of links in an unlimited number of ways.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/javelin/links.less</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>item</code></th>
+                <td>A single link item in a list of links.</td>
+            </tr>
+            <tr>
+                <th><code>item-anchor</code></th>
+                <td>Link block for a link item.</td>
+            </tr>
+            <tr>
+                <th><code>item-description</code></th>
+                <td>Description block for a link item.</td>
+            </tr>
+            <tr>
+                <th><code>item-link</code></th>
+                <td>This is just a <code>&lt;div&gt;</code> that wraps the actual link block... <em>who knows</em>.</td>
+            </tr>
+            <tr>
+                <th><code>list</code></th>
+                <td>List container for the list of links items.</td>
+            </tr>
+            <tr>
+                <th><code>self</code></th>
+                <td>Container for the links index view.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>inline()</h3>
+    <p><code>#javelin-gallery.inline(@offset-horz; @color; @hover-color; @divider)</code></p>
+    <p>The links module has its own mixin for putting items into a single line. Additionally, if the <code>@divider</code> argument is given, it will render dividers between each item.</p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>offset-horz</code></th>
+                <td>Left and right margins.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>color</code></th>
+                <td>Text color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-color</code></th>
+                <td>Text color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>divider</code></th>
+                <td><span class="label label-primary">Optional</span> If provided, this will render a divider between each item.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.links-example {
+    #javelin-links.inline(10px; #08c; darken(#08c, 15%); #fff);
+}
+
+
+// Will output...
+.javelin_linksItems {
+    margin-left: 0;
+    margin-bottom: 0;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.javelin_linksItem {
+    padding-left: 5px;
+    padding-right: 10px;
+    background-image: none;
+    border-right: 1px solid #fff;
+    display: inline-block;
+    list-style: none;
+}
+.javelin_linksItem:first-child {
+    padding-left: 0;
+}
+.javelin_linksItem:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.javelin_linksItemAnchor {
+    color: #08c;
+    display: inline-block;
+}
+.javelin_linksItemAnchor:hover {
+    color: #005580;
+}
+</pre>
+</div>

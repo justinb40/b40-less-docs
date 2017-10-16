@@ -1,0 +1,53 @@
+<div class="article-header">
+    <h2 class="article-title">clearfix <small>mixin by reference</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.clearfix (reference)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Allows a parent container to clear child floats with no additional markup.</p>
+    
+    <div class="article-tip">
+        <h4>Reference Only</h4>
+        <p>This class is meant to be <em>extended</em> rather than called as a mixin.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <p>None.</p>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.parent {
+    &:extend(.clearfix all);
+    
+    .child {
+        width: 25%;
+        float: left;
+    }
+}
+
+
+// Will output...
+.parent:before,
+.parent:after {
+    content: "";
+    display: table;
+}
+.parent:after {
+    clear: both;
+}
+.parent .child {
+    width: 25%;
+    float: left;
+}
+</pre>
+</div>

@@ -1,0 +1,47 @@
+<div class="article-header">
+    <h2 class="article-title">border-box-sizing <small>mixin by reference</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.border-box-sizing (reference)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Allows an element to modify sizing metrics without altering the explicit width or height.</p>
+    
+    <div class="article-tip">
+        <h4>Reference Only</h4>
+        <p>This class is meant to be <em>extended</em> rather than called as a mixin.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <p>None.</p>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.block {
+    &:extend(.border-box-sizing all);
+    
+    width: 100%;
+    padding: 30px;
+}
+
+
+// Will output...
+.block {
+    width: 100%;
+    padding: 30px;
+    
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+</pre>
+</div>

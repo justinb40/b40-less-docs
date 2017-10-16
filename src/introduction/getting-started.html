@@ -1,0 +1,51 @@
+<div class="article-header">
+    <h1 class="article-title">Getting Started</h1>
+</div>
+
+<div class="article-description">
+    <h3>Project Files</h3>
+    <p>The template directory structure of projects will typically follow the example below:</p>
+    
+<pre>
+default/
+├── css/
+│   ├── _less/
+│   │  ├── compiler.less
+│   │  ├── config.less
+│   │  └── theme.less
+│   └── style.min.css
+├── icons/
+│   ├── favicon.ico
+│   ├── apple-touch-icon-57x57.png
+│   ├── apple-touch-icon-72x72.png
+│   ├── apple-touch-icon-114x114.png
+│   └── apple-touch-icon-144x144.png
+├── images/
+├── js/
+│   ├── _src/
+│   │  ├── common.js
+│   │  └── index.js
+│   ├── common.min.js
+│   └── index.min.js
+├── index.html
+└── inside.html
+</pre>
+    
+    <ul>
+        <li><code>compiler.less</code> imports resources and dictates load order.</li>
+        <li><code>config.less</code> defines variables and mixins and overrides defaults.</li>
+        <li><code>theme.less</code> defines the custom styles for the project.</li>
+        <li><code>style.min.css</code> contains the final, minified output from <code>compiler.less</code>.</li>
+    </ul>
+    
+    <div class="article-tip">
+        <h4>Device Icons</h4>
+        <p>For mobile and responsive websites, additional device icons need to be created and stored in the <code>icons/</code> directory.</p>
+    </div>
+    
+    <div class="article-tip">
+        <h4>Javascript Files</h4>
+        <p>You may have some javascript files to include with your project. Source versions of your javascript files should be stored in the <code>js/_src/</code> directory. Minified versions of these files are stored directly in the <code>js/</code> directory and have <code>.min</code> appended to the file name. To minify your javascript files, use <a href="http://javascript-minifier.com/">javascript minifier</a>.</p>
+        <p>See documentation on <a ui-sref="doc.article({ path: 'introduction/scripts.html' })">using scripts</a> for more information.</p>
+    </div>
+</div>

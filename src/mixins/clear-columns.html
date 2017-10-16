@@ -1,0 +1,62 @@
+<div class="article-header">
+    <h2 class="article-title">clear-columns <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.clear-columns(@num)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Control where column overflow clears new rows.</p>
+    <p>Some rows are meant to be overflowed. When a row has an overflow of columns, it attempts to push the columns that won't fit in the remaining space to the next line.</p>
+    <p>However, varying sizes of content per column may leave us without the neat structure of rows and columns that we want. This mixin will help us enforce when to start and stop a new row when we are dealing with rows that have an overflow of columns.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>num</code></th>
+                <td>Total number of columns per row.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.parent {
+    .grid-3 {
+        .clear-columns(4);
+    }
+}
+
+
+// Will output...
+.parent .grid-3:nth-child(4n+1) {
+    clear: left;
+}
+
+.parent .grid-3:nth-child(4n+4) {
+    clear: right;
+}
+</pre>
+</div>

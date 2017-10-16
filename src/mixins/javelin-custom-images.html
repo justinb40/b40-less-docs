@@ -1,0 +1,97 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-custom-images <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-custom-images(@rules; @anti-rules)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Define custom image styling rules for images in various Javelin modules. If <code>@anti-rules</code> is omitted, the <code>.img-nostyle</code> rules will not be included.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>rules</code></th>
+                <td>The styling rules to apply to images.</td>
+                <td>ruleset</td>
+            </tr>
+            <tr>
+                <th><code>anti-rules</code></th>
+                <td><span class="label label-primary">Optional</span> The styling rules to reset <code>@rules</code>.</td>
+                <td>ruleset</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-custom-images({
+    border: 2px solid @border-color-base;
+    border-radius: @border-radius-base;
+}; {
+    border: 0;
+    border-radius: 0;
+});
+
+
+// Will output...
+.javelin_textItem img,
+.javelin_rotatorItem img,
+.javelin_galleryItem img,
+.javelin_blogPostImage img,
+.javelin_blogPostDescription img,
+.javelin_linksItemDescription img,
+.javelin_staffImage img,
+.javelin_staffItemImage img,
+.javelin_twitterHeader img,
+.cms-tabs-panel img {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.javelin_textItem .img-nostyle,
+.javelin_rotatorItem .img-nostyle,
+.javelin_galleryItem .img-nostyle,
+.javelin_blogPostImage .img-nostyle,
+.javelin_blogPostDescription .img-nostyle,
+.javelin_linksItemDescription .img-nostyle,
+.javelin_staffImage .img-nostyle,
+.javelin_staffItemImage .img-nostyle,
+.javelin_twitterHeader .img-nostyle,
+.cms-tabs-panel .img-nostyle,
+.javelin_textItem .img-nostyle img,
+.javelin_rotatorItem .img-nostyle img,
+.javelin_galleryItem .img-nostyle img,
+.javelin_blogPostImage .img-nostyle img,
+.javelin_blogPostDescription .img-nostyle img,
+.javelin_linksItemDescription .img-nostyle img,
+.javelin_staffImage .img-nostyle img,
+.javelin_staffItemImage .img-nostyle img,
+.javelin_twitterHeader .img-nostyle img,
+.cms-tabs-panel .img-nostyle img {
+    border: 0;
+    border-radius: 0;
+}
+</pre>
+</div>

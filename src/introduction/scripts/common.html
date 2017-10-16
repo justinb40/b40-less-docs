@@ -1,0 +1,358 @@
+<div class="article-header">
+    <h1 class="article-title">common<small> . js</small></h1>
+    
+    <div class="article-subtitle">
+        <code>public/less/less.common.min.js</code>
+    </div>
+</div>
+
+<div class="article-description">
+    <p>All sites using the LESS framework should include include the necessary "common" script for the framework. This script acts as the main script for any site using the LESS framework and many of the built-in components and styles depend on it.</p>
+    
+    <h3>Enabled features:</h3>
+    <ul>
+        <li>Add <code>onTransitionEnd()</code>  as a jQuery method to handle <code>transitionend</code> events.</li>
+        <li>Add <code>is-admin</code> and <code>is-user</code> classes to the body element when logged in. This is useful when styling for "logged in" conditions.</li>
+        <li>Add <code>is-parent</code> classes to parent menu elements specifically on elements with the ids <code>#nav</code> and <code>#subnav</code>.</li>
+        <li>Misc. convenience functions on the global <code>Javelin</code> object. <em>(see Class Methods section below)</em></li>
+    </ul>
+    
+    <div class="article-tip">
+        <p>Include before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.common.min.js"&gt;
+</code></pre>
+    </div>
+</div>
+
+<div class="article-params">
+    <h3>Class Methods</h3>
+    <p>These methods are available on the global <code>Javelin</code> object.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>addCommas()</code></th>
+                <td>Add commas to a number-formatted string.</td>
+            </tr>
+            <tr>
+                <th><code>broadcast()</code></th>
+                <td>Broadcast a jQuery event on the <code>&lt;body&gt;</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>contains()</code></th>
+                <td>Returns true if <code>needle</code> is a descendant of <code>haystack</code>.</td>
+            </tr>
+            <tr>
+                <th><code>dataAttr()</code></th>
+                <td>Return the value of one or more HTML5 <code>data-</code> attributes.</td>
+            </tr>
+            <tr>
+                <th><code>getUrlParam()</code></th>
+                <td>Return a parameter from the URL string.</td>
+            </tr>
+            <tr>
+                <th><code>hiddenWidth()</code></th>
+                <td>Return the computed width of a hidden element.</td>
+            </tr>
+            <tr>
+                <th><code>hiddenHeight()</code></th>
+                <td>Return the computed height of a hidden element.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>addCommas()</h3>
+    <p>Add commas to a number-formatted string. For example, <code>$10999.00</code> will become <code>$10,999.00</code>.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>str</code></th>
+                <td>Number-formatted string.</td>
+                <td>String</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+var val = '10999.00'; // this could also come from an input element
+var total = '$' + Javelin.addCommas(val);
+
+console.log(total); // outputs $10,999.00
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>broadcast()</h3>
+    <p>Broadcast a jQuery event on the <code>&lt;body&gt;</code> element. This is typically only used within other built-in components, but this is still a usable, public method on the global <code>Javelin</code> object.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>name</code></th>
+                <td>Event name. All events broadcasted by this function are namespaced with <code>b40</code>, which will produce an event name such as <code>b40.customevent</code> or <code>b40.customevent.start</code></td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <th><code>data</code></th>
+                <td><span class="label label-primary">Optional</span> Additional data stored in an object and passed to the callback function</td>
+                <td>Object</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+// Broadcasts an event named 'b40.custom.start' on the &lt;body&gt; element
+Javelin.broadcast('custom.start');
+
+// Listen for our event and run the callback function when it is broadcasted
+$('body').bind('b40.custom.start', function() {
+    // do something
+});
+
+
+
+// Now, the same as above except we pass in some data and use it in our callback
+var data = { customFlag: true };
+Javelin.broadcast('custom.start', data);
+
+// listening for broadcasted events
+$('body').bind('b40.custom.start', function(event, data) {
+    if (data.customFlag) {
+        // do something in response to `true`
+    } else {
+        // do something in response to `false`
+    }
+});
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>contains()</h3>
+    <p>Returns true if <code>needle</code> is a descendant of <code>haystack</code>.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>haystack</code></th>
+                <td>The parent or ascendent element</td>
+                <td>jQuery Element</td>
+            </tr>
+            <tr>
+                <th><code>needle</code></th>
+                <td>The child or descendent element</td>
+                <td>jQuery Element</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+// in this example, we are comparing "this" element to a potential `.container` element
+var self = $(this),
+    container = $('.container');
+
+if (Javelin.contains(container, self)) {
+    // `self` is a descendent of `container`
+} else {
+    // `self` is NOT a descendent of `container`
+}
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>dataAttr()</h3>
+    <p>Return the value of one or more HTML5 <code>data-</code> attributes.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>target</code></th>
+                <td>The element that has <code>data-</code> attributes to read</td>
+                <td>jQuery Element</td>
+            </tr>
+            <tr>
+                <th><code>attr</code></th>
+                <td>The string name or array of names that match the data attribute(s) without the <code>data-</code> part of the attribute name.</td>
+                <td>String or Array</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="markup">
+&lt;button type="button" data-target="#toggle-target" data-id="7" id="toggle-btn"&gt;Toggle&lt;/button&gt;
+</pre>
+<pre prism="javascript">
+$('#toggle-btn').click(function() {
+    var self = $(this);
+    
+    // `attrs` will be `{ target: '#toggle-target', id: '7' }`
+    var attrs = Javelin.dataAttrs(self, ['target', 'id']);
+    
+    // `attrs.target` returns "#toggle-target"
+    var target = $(attrs.target);
+    
+    if (target.is(':visible')) {
+        target.hide();
+    } else {
+        target.show();
+    }
+});
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>getUrlParam()</h3>
+    <p>Return a parameter from the URL string. Returns <code>undefined</code> if <code>param</code> is not found in the URL.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>param</code></th>
+                <td>Name of a parameter in the URL</td>
+                <td>String</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+// Given this URL: http://www.back40design.com/?example=Hello+World
+Javelin.getUrlParam('example'); // returns "Hello World"
+Javelin.getUrlParam('test'); // returns `undefined`
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>hiddenWidth()</h3>
+    <p>Return the computed width of a hidden element.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>element</code></th>
+                <td>The hidden element whose width you need</td>
+                <td>jQuery Element</td>
+            </tr>
+            <tr>
+                <th><code>useOuter</code></th>
+                <td><span class="label label-primary">Optional</span> If true, this will use the jQuery method <code>outerWidth()</code> instead of <code>width()</code> when computing the width value.</td>
+                <td>Boolean</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+// Consider the scenario where a square div with an ID of '#mydiv' is hidden on the page and must be measured before it can appear. Also consider that this div has a left and right margin of 20px.
+Javelin.hiddenWidth('#mydiv'); // lets say this returns 500px
+Javelin.hiddenWidth('#mydiv', true); // returns 540px (500px + 20px + 20px)
+</pre>
+</div>
+
+<div class="article-params">
+    <h3>hiddenHeight()</h3>
+    <p>Return the computed height of a hidden element.</p>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Param</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>element</code></th>
+                <td>The hidden element whose height you need</td>
+                <td>jQuery Element</td>
+            </tr>
+            <tr>
+                <th><code>useOuter</code></th>
+                <td><span class="label label-primary">Optional</span> If true, this will use the jQuery method <code>outerHeight()</code> instead of <code>height()</code> when computing the height value.</td>
+                <td>Boolean</td>
+            </tr>
+        </tbody>
+    </table>
+<pre prism="javascript">
+// Consider the scenario where a square div with an ID of '#mydiv' is hidden on the page and must be measured before it can appear. Also consider that this div has a top and bottom margin of 20px.
+Javelin.hiddenHeight('#mydiv'); // lets say this returns 500px
+Javelin.hiddenHeight('#mydiv', true); // returns 540px (500px + 20px + 20px)
+</pre>
+</div>

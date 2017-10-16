@@ -1,0 +1,117 @@
+<div class="article-header">
+    <h1 class="article-title">Common Page Elements <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Automatically set <code>z-index</code> ordering for common page elements and provide standard styling for elements like the logo, page title and links inside the Back40 credit line.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40-credit</code></th>
+                <td>Wrap the javelin credit tag with this class to automatically style link colors to <code>inherit</code> to plain text color.</td>
+            </tr>
+            <tr>
+                <th><code>default-region</code></th>
+                <td>Wrap a javelin region tag with this class to give the space around it a minimum height. This is useful when the space for the main content is empty and you do not want to the page to collapse entirely.</td>
+            </tr>
+            <tr>
+                <th><code>logo</code></th>
+                <td>Because we typically place logos in an <code>&lt;h2&gt;</code>, this class will remove its bottom margin.</td>
+            </tr>
+            <tr>
+                <th><code>page</code></th>
+                <td>Use as the outer-most container for your page structure to isolate your page from positioned elements like modals or third-party content injected into the DOM.</td>
+            </tr>
+            <tr>
+                <th><code>page-footer</code></th>
+                <td>Wrap the footer of your page with a <code>&lt;footer&gt;</code> element using this class.</td>
+            </tr>
+            <tr>
+                <th><code>page-header</code></th>
+                <td>Wrap the header of your page with a <code>&lt;header&gt;</code> element using this class.</td>
+            </tr>
+            <tr>
+                <th><code>page-hero</code></th>
+                <td>If your site is using a hero image, wrap that section of your page with a <code>&lt;div&gt;</code> element using this class.</td>
+            </tr>
+            <tr>
+                <th><code>page-main</code></th>
+                <td>Wrap the main content of your page with a <code>&lt;main&gt;</code> element using this class.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav</code></th>
+                <td>Wrap the main navigation of your page with a <code>&lt;nav&gt;</code> element using this class.</td>
+            </tr>
+            <tr>
+                <th><code>page-title</code></th>
+                <td>If your page title is separate from the main content, wrap that section of your page with a <code>&lt;div&gt;</code> element using this class.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;body&gt;
+    &lt;div class="page"&gt;
+        &lt;header class="page-header"&gt;
+            &lt;div class="container"&gt;
+                
+                &lt;h2 class="logo"&gt;
+                    &lt;a href="/"&gt;
+                        &lt;img src="/sites/back40design/templates/default/images/logo.jpg" alt="Back40 Design"&gt;
+                    &lt;/a&gt;
+                &lt;/h2&gt;
+                
+                &lt;nav class="page-nav"&gt;
+                    &lt;!nav id="nav" type="nested" /!&gt;
+                &lt;/nav&gt;
+                
+            &lt;/div&gt;
+        &lt;/header&gt;
+        &lt;div class="page-hero"&gt;
+            &lt;div class="container"&gt;
+                
+                &lt;!region:hero type="global" /!&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;main class="page-main"&gt;
+            &lt;div class="container"&gt;
+                
+                &lt;div class="default-region"&gt;
+                    &lt;!region:default type="default" /!&gt;
+                &lt;/div&gt;
+                
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;footer&gt;
+            &lt;div class="container"&gt;
+                
+                &amp;copy;2015 Back40 Design
+                &lt;span class="b40-credit"&gt; &lt;!back40:credit /!&gt;&lt;/span&gt;
+                
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+</div>

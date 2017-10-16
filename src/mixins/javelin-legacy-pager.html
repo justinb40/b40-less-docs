@@ -1,0 +1,223 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-legacy-pager <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-legacy-pager(@size; @item-offset @default-bg; @default-color; @hover-bg; @hover-color; @active-bg; @active-color; @border-radius: 0;)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>User this mixin to easily style the legacy pager that comes from Javelin.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>size</code></th>
+                <td>A square size to apply to each pager item (excluding previous and next links).</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>item-offset</code></th>
+                <td>The left and right margins applied to each pager item.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>default-bg</code></th>
+                <td>Default background color for pager items.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>default-color</code></th>
+                <td>Default text color for pager items.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-bg</code></th>
+                <td>Background color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-color</code></th>
+                <td>Text color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>active-bg</code></th>
+                <td>Background color for active states (aka "current page").</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>active-color</code></th>
+                <td>Text color for active states (aka "current page").</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>border-radius</code></th>
+                <td><span class="label label-primary">Optional</span> Border radius size.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>&nbsp;</p>
+    
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/mixins/javelin.less</code></p>
+    
+    <table class="table">
+        <caption><small>All mixins take a single ruleset as an argument: <code><small>{ }</small></code></small></caption>
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>javelin-legacy-pager-item</code></th>
+                <td>A single item in the pager, excluding the previous and next links.</td>
+            </tr>
+            <tr>
+                <th><code>javelin-legacy-pager-item-active</code></th>
+                <td>An active or "current page" item.</td>
+            </tr>
+            <tr>
+                <th><code>javelin-legacy-pager-item-inactive</code></th>
+                <td>Any item that is not an active or "current page" item.</td>
+            </tr>
+            <tr>
+                <th><code>javelin-legacy-pager-next</code></th>
+                <td>The next page link.</td>
+            </tr>
+            <tr>
+                <th><code>javelin-legacy-pager-prev</code></th>
+                <td>The previous page link.</td>
+            </tr>
+            <tr>
+                <th><code>javelin-legacy-pager-prevnext</code></th>
+                <td>Both the previous and next links.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.cms-directory-pager {
+    .javelin-legacy-pager(30px; 1px; #fff; #000; #fff; @brand-primary; @brand-primary; #fff; 50%);
+    
+    // Previous and Next links
+    .javelin-legacy-pager-prevnext({
+        .transition(opacity @animation-duration-base @animation-timing-function-base);
+        
+        opacity: 1;
+        
+        &:hover {
+            opacity: .5;
+        }
+    });
+    
+    .javelin-legacy-pager-prev({
+        float: left;
+    });
+    
+    .javelin-legacy-pager-next({
+        float: right;
+    });
+}
+
+
+// Will output...
+.cms-directory-pager {
+    > a,
+    > b {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+    
+    a,
+    b {
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+    b {
+        width: 29px;
+        height: 29px;
+        background-color: #08c;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 30px;
+        
+        & > a {
+            width: 30px;
+            height: 30px;
+            margin: -1px;
+            background-color: #fff;
+            border-radius: 0;
+            color: #000;
+            
+            &:hover {
+                background-color: #fff;
+                color: #08c;
+            }
+        }
+    }
+    
+    > a:first-child,
+    > a:last-child {
+        line-height: 30px;
+        position: relative;
+        top: 1px;
+    }
+    
+    // Previous and Next links
+    > a:first-child,
+    > a:last-child {
+        opacity: 1;
+        
+        -webkit-transition: opacity .2s ease;
+           -moz-transition: opacity .2s ease;
+                transition: opacity .2s ease;
+    }
+    
+    > a:first-child:hover,
+    > a:last-child:hover {
+        opacity: .5;
+    }
+    
+    > a:first-child {
+        float: left;
+    }
+    
+    > a:last-child {
+        right: right;
+    }
+}
+</pre>
+</div>

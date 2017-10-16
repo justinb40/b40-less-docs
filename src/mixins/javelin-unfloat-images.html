@@ -1,0 +1,75 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-unfloat-images <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-unfloat-images(@selector; @remove-margins)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>When dealing with shared module content between desktop and mobile websites, this function can be used to unfloat all floated images in Javelin modules.</p>
+    
+    <div class="article-tip">
+        <p>Selector stacks will not work with the <code>@selector</code> argument. Only single selectors will correctly accept the styling from the mixin.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>selector</code></th>
+                <td>A single class name selector (without the decimal) to apply the mixin rules.</td>
+                <td>keyword</td>
+            </tr>
+            <tr>
+                <th><code>remove-margins</code></th>
+                <td><span class="label label-primary">Optional</span> Determines whether or not image margins should be set to zero.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-unfloat-images(javelin_textItem);
+
+
+// Will output...
+.javelin_textItem img[style*="float"] {
+    margin: 0 !important;
+    float: none !important;
+}
+
+
+// This type of thing...
+.javelin-unfloat-images(~".javelin_textItem, .javelin_galleryItem, .javelin_faqItem");
+
+// Fails in LESS...
+// (an additional decimal is created and the img[] qualifier does not apply to every selector in the stack)
+..javelin_textItem,
+.javelin_galleryItem,
+.javelin_faqItem img[style*="float"] {
+    margin: 0 !important;
+    float: none !important;
+}
+</pre>
+</div>

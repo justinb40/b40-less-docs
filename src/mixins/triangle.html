@@ -1,0 +1,89 @@
+<div class="article-header">
+    <h2 class="article-title">triangle <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.triangle(@side; @width; @height; @color)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Generate pure CSS triangles.</p>
+    
+    <div class="article-tip">
+        <p>CSS triangles can never be <em>obtuse</em>.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>direction</code></th>
+                <td>Which direction the triangle vertex (top) will point.</td>
+                <td>keyword</td>
+            </tr>
+            <tr>
+                <th><code>width</code></th>
+                <td>Width.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>height</code></th>
+                <td>Height.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>color</code></th>
+                <td>Solid color for triangle.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.caret::after {
+    .triangle(top; 20px; 10px; #08c);
+    
+    margin-left: -10px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    content: "";
+}
+
+
+// Will output...
+.caret::after {
+    // This positions the triangle
+    margin-left: -10px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    content: "";
+    
+    // This generates the triangle itself, with the width (20px) divided evenly to the left and right borders
+    border-bottom: 10px solid #08c;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+</pre>
+</div>

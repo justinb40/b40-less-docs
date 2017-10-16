@@ -1,0 +1,89 @@
+<div class="article-header">
+    <h2 class="article-title">button-gradient <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.button-gradient(@start; @stop; @hover-start; @hover-stop)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Applies a gradient background image to the <code>static</code>, <code>:hover</code>, <code>:focus</code> and <code>:active</code> states of buttons.</p>
+    
+    <div class="article-tip">
+        <h4>Optional Arguments</h4>
+        <p>If hover state colors are omitted in the arguments list, those values are still set as darkened versions of <code>@start</code> and <code>@stop</code>.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>start</code></th>
+                <td>Gradient start color (top).</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>stop</code></th>
+                <td>Gradient stop color (bottom).</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-start</code></th>
+                <td><span class="label label-primary">Optional</span> Gradient start color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-stop</code></th>
+                <td><span class="label label-primary">Optional</span> Gradient stop color for hover states.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.btn-example {
+    .button-gradient(#08c; darken(#08c, 15%); #f66; darken(#f66, 15%));
+}
+
+
+// Will output...
+.btn-example {
+    background-image: -webkit-linear-gradient(top, #08c 0%, #005580 100%);
+    background-image: -o-linear-gradient(top, #08c 0%, #005580 100%);
+    background-image: linear-gradient(to bottom, #08c 0%, #005580 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff005580', GradientType=0);
+}
+
+.btn-example:hover,
+.btn-example:focus,
+.btn-example:active,
+.btn-example.active {
+    background-image: -webkit-linear-gradient(top, #f66 0%, #ff1919 100%);
+    background-image: -o-linear-gradient(top, #f66 0%, #ff1919 100%);
+    background-image: linear-gradient(to bottom, #f66 0%, #ff1919 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff6666', endColorstr='#ffff1919', GradientType=0); 
+}
+</pre>
+</div>

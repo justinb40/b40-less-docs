@@ -1,0 +1,276 @@
+<div class="article-header">
+    <h1 class="article-title">Navigation <small>module</small></h1>
+    
+    <div class="article-subtitle">
+        <code>#javelin-nav</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>By far the most in-depth LESS component in the framework, the core Navigation module can be fully styled almost entirely by overriding the many variables that are setup to work with this component.</p>
+    
+    <div class="article-tip">
+        <h4>Nesting Limit</h4>
+        <p>Variables target properties of items nested up to three levels deep. The third level's styling applies to all other descendants from that point.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/javelin/navigation.less</code></p>
+    
+    <table class="table">
+        <caption><small>Ordered according to navigation nesting level. All mixins take a single ruleset as an argument: <code><small>{ }</small></code></small></caption>
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>navbar-item</code></th>
+                <td>First-level <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-active-item</code></th>
+                <td>First-level <code>&lt;li&gt;</code> elements that have the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-link</code></th>
+                <td>First-level <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-active-link</code></th>
+                <td>First-level <code>&lt;a&gt;</code> elements whose parent has the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-dropdown-menu</code></th>
+                <td>Second-level <code>&lt;ul&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-dropdown-item</code></th>
+                <td>Second-level <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-dropdown-active-item</code></th>
+                <td>Second-level <code>&lt;li&gt;</code> elements that have the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-dropdown-link</code></th>
+                <td>Second-level <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-dropdown-active-link</code></th>
+                <td>Second-level <code>&lt;a&gt;</code> elements whose parent has the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-nested-menu</code></th>
+                <td>Third-level <code>&lt;ul&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-nested-item</code></th>
+                <td>Third-level <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-nested-active-item</code></th>
+                <td>Third-level <code>&lt;li&gt;</code> elements that have the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-nested-link</code></th>
+                <td>Third-level <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-nested-active-link</code></th>
+                <td>Third-level <code>&lt;a&gt;</code> elements whose parent has the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-deep-menu</code></th>
+                <td>Applies to all <code>&lt;ul&gt;</code> elements nested deeper than three levels.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-deep-item</code></th>
+                <td>Applies to all <code>&lt;li&gt;</code> elements nested deeper than three levels.</td>
+            </tr>
+            <tr>
+                <th><code>navbar-deep-link</code></th>
+                <td>Applies to all <code>&lt;a&gt;</code> elements nested deeper than three levels.</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th><code>stacked-item</code></th>
+                <td>First-level <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-active-item</code></th>
+                <td>First-level <code>&lt;li&gt;</code> elements that have the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-link</code></th>
+                <td>First-level <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-active-link</code></th>
+                <td>First-level <code>&lt;a&gt;</code> elements whose parent has the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-nested-menu</code></th>
+                <td>Second-level <code>&lt;ul&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-nested-item</code></th>
+                <td>Second-level <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-nested-active-item</code></th>
+                <td>Second-level <code>&lt;li&gt;</code> elements that have the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-nested-link</code></th>
+                <td>Second-level <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-nested-active-link</code></th>
+                <td>Second-level <code>&lt;a&gt;</code> elements whose parent has the <code>.javelin_active</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-deep-menu</code></th>
+                <td>Applies to all <code>&lt;ul&gt;</code> elements nested deeper than two levels.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-deep-item</code></th>
+                <td>Applies to all <code>&lt;li&gt;</code> elements nested deeper than two levels.</td>
+            </tr>
+            <tr>
+                <th><code>stacked-deep-link</code></th>
+                <td>Applies to all <code>&lt;a&gt;</code> elements nested deeper than two levels.</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th><code>inline-item</code></th>
+                <td>Applies to all <code>&lt;li&gt;</code> elements.</td>
+            </tr>
+            <tr>
+                <th><code>inline-link</code></th>
+                <td>Applies to all <code>&lt;a&gt;</code> elements.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>navbar()</h3>
+    <p><code>#javelin-nav.navbar(@dropdown; @flyout; @float)</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>dropdown</code></th>
+                <td><span class="label label-primary">Optional</span> If <code>true</code>, style dropdown menus. Defaults to <code>true</code>.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <th><code>flyout</code></th>
+                <td><span class="label label-primary">Optional</span> If <code>true</code>, style flyout menus. Defaults to <code>false</code>.</td>
+                <td>boolean</td>
+            </tr>
+            <tr>
+                <th><code>float</code></th>
+                <td><span class="label label-primary">Optional</span> If <code>true</code>, float first-level navigation <code>&lt;li&gt;</code> items to the left. Defaults to <code>true</code>.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>stacked()</h3>
+    <p><code>#javelin-nav.stacked(@flyout)</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>flyout</code></th>
+                <td><span class="label label-primary">Optional</span> If <code>true</code>, style flyout menus. Defaults to <code>false</code>.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>inline()</h3>
+    <p><code>#javelin-nav.inline(@offset-horz; @color; @hover-color; @divider)</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>offset-horz</code></th>
+                <td>Left and right margins for list items.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>color</code></th>
+                <td>Link text color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-color</code></th>
+                <td>Link text color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>divider</code></th>
+                <td><span class="label label-primary">Optional</span> If provided, this will render a divider between each list item.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

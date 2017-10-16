@@ -1,0 +1,96 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-custom-bullets <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-custom-bullets(@bg-path; @position; @indent)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply a background image for custom list bullets in various Javelin modules.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bg-path</code></th>
+                <td>The file path for the image to use as list bullets.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <th><code>position</code></th>
+                <td><span class="label label-primary">Optional</span> The background image position.</td>
+                <td>x y</td>
+            </tr>
+            <tr>
+                <th><code>indent</code></th>
+                <td><span class="label label-primary">Optional</span> The starting position of the text content relative to the left edge of the list item.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-custom-bullets("@{images-path}bullet-default.png"; 0 12px; 20px);
+
+
+// Will output...
+.javelin_textItem ul,
+.javelin_rotatorItem ul,
+.javelin_calendarEventBody ul,
+.javelin_blogPostDescription ul,
+.javelin_faqQuestions ul,
+.javelin_faqItemAnswer ul,
+.javelin_links ul,
+.javelin_staffBody ul,
+.cms-tabs-panel ul {
+    margin-left: 20px;
+}
+
+.javelin_textItem ul li,
+.javelin_rotatorItem ul li,
+.javelin_calendarEventBody ul li,
+.javelin_blogPostDescription ul li,
+.javelin_faqQuestions ul li,
+.javelin_faqItemAnswer ul li,
+.javelin_links ul li,
+.javelin_staffBody ul li,
+.cms-tabs-panel ul li {
+    padding-left: 20px;
+    background: url("/sites/sitename/templates/default/images/bullet-default.png") 0 12px no-repeat;
+    list-style: none;
+}
+
+.javelin_textItem ul li ul,
+.javelin_rotatorItem ul li ul,
+.javelin_calendarEventBody ul li ul,
+.javelin_blogPostDescription ul li ul,
+.javelin_faqQuestions ul li ul,
+.javelin_faqItemAnswer ul li ul,
+.javelin_links ul li ul,
+.javelin_staffBody ul li ul,
+.cms-tabs-panel ul li ul {
+    margin-left: 20px;
+}
+</pre>
+</div>

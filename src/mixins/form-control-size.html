@@ -1,0 +1,87 @@
+<div class="article-header">
+    <h2 class="article-title">form-control-size <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.form-control-size(@input-height; @padding-vert; @padding-horz; @font-size; @line-height; @border-radius)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set sizing metrics for a form control.</p>
+    
+    <div class="article-tip">
+        <p>This does not apply to checkboxes, radio buttons or file inputs.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>input-height</code></th>
+                <td>Total height of the input field.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>padding-vert</code></th>
+                <td>Top and bottom padding.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>padding-horz</code></th>
+                <td>Left and right padding.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>font-size</code></th>
+                <td>Font size.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>line-height</code></th>
+                <td>Line height.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>border-radius</code></th>
+                <td><span class="label label-primary">Optional</span> Border radius size.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.form-control-example {
+    .form-control-size(30px; 5px; 10px; @font-size-sm; @line-height-sm; @border-radius-sm);
+}
+
+
+// Will output...
+.form-control-example {
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+</pre>
+</div>

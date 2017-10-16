@@ -1,0 +1,84 @@
+<div class="article-header">
+    <h2 class="article-title">fixed-toolbar <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.fixed-toolbar(@adminbar-top; @userbar-top)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Positions an element to be fixed to the top of the viewport.</p>
+    
+    <div class="article-tip">
+        <p>Be sure to set a value for the <code>@page-top-buffer</code> variable when using this mixin.</p>
+    </div>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>This mixin relies on additional logic to handle when a user is logged in as either an admin or regular user. To enable this behavior, include this script at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>adminbar-top</code></th>
+                <td><span class="label label-primary"></span> Expected height of the admin bar.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>userbar-top</code></th>
+                <td><span class="label label-primary"></span> Expected height of the user bar.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.page-header {
+    .fixed-toolbar();
+    
+    height: 60px;
+}
+
+
+// Will output...
+.page-header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    
+    height: 60px;
+}
+.is-admin .page-header {
+    top: 60px;
+}
+.is-user .page-header {
+    top: 40px;
+}
+</pre>
+</div>

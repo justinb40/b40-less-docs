@@ -1,0 +1,70 @@
+<div class="article-header">
+    <h2 class="article-title">list-unstyled <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.list-unstyled(@deep)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Remove bullets from list items. Additionally, you can specify whether immediate children or all descendants are affected.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>deep</code></th>
+                <td><span class="label label-primary">Optional</span> Determines whether immediate children or all descendants are affected.</td>
+                <td>boolean</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-list-1 {
+    .list-unstyled();
+}
+
+.example-list-2 {
+    .list-unstyled(true);
+}
+
+
+// When @deep is set to FALSE, only immediate child list items are affected
+.example-list-1 {
+    margin-left: 0;
+}
+.example-list-1 > li {
+    list-style: none;
+}
+
+
+// When @deep is set to TRUE, all descendant list items are affected
+.example-list-2 {
+    margin-left: 0;
+}
+.example-list-2 li {
+    list-style: none;
+}
+</pre>
+</div>

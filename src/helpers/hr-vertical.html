@@ -1,0 +1,36 @@
+<div class="article-header">
+    <h2 class="article-title">hr-vertical <small>helper</small></h2>
+</div>
+
+
+<div class="article-description">
+    <p>Useful for vertical pin lines between sections of content. By default, the vertical line is positioned to the center of its nearest positioned ancestor. Override this position with <a ui-sref="doc.article({ path: 'components/grid.html' })"><code>.offset-[n]</code></a> to position the vertical line between two grid columns. If this is not sufficient for positioning, explicitly set the <code>margin-left</code> property in a <code>[style]</code> attribute.</p>
+    
+    <div class="article-tip">
+        <p>Helpful when used in conjunction with <a ui-sref="doc.article({ path: 'helpers/relative.html' })"><code>.relative</code></a> to specify the nearest positioned ancestor.</p>
+    </div>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="row relative"&gt;
+    &lt;div class="grid-3"&gt;
+        &lt;p&gt;Column 1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;hr class="hr-vertical offset-3"&gt;
+    &lt;div class="grid-3"&gt;
+        &lt;p&gt;Column 2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;hr class="hr-vertical offset-6"&gt;
+    &lt;div class="grid-3"&gt;
+        &lt;p&gt;Column 3&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;hr class="hr-vertical offset-9"&gt;
+    &lt;div class="grid-3"&gt;
+        &lt;p&gt;Column 4&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>

@@ -1,0 +1,65 @@
+<div class="article-header">
+    <h2 class="article-title">overflow-scroll <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.overflow-scroll(@direction)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set overflow property of an element (typically a <code>&lt;div&gt;</code>) .</p>
+    
+    <div class="article-tip">
+        <p>If <em>direction</em> is omitted, it applies the overflow to both directions.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>direction</code></th>
+                <td><span class="label label-primary">Optional</span> Which direction to apply the overflow scrolling, either <code>x</code> or <code>y</code>.</td>
+                <td>keyword</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-scrollable-div {
+    .overflow-scroll(y);
+    
+    width: 100%;
+    height: 400px;
+}
+
+
+// Will output...
+.example-scrollable-div {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    
+    -webkit-overflow-scrolling: touch;
+}
+</pre>
+</div>

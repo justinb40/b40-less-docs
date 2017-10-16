@@ -1,0 +1,26 @@
+<div class="article-header">
+    <h1 class="article-title">Configuration</h1>
+</div>
+
+<div class="article-description">
+    <p>Variables from the framework's core are overridden in <code>config.less</code>. The <code>@javelin-sitename</code> var is also established in the same file as well as any custom variables or mixins created specially for the project.</p>
+    
+    <h3>Defining custom variables and mixins</h3>
+    <p>Both are meant for a high amount of reusability and while not forbidden, neither should be too common in your work. For example, if you are using a custom variable only a couple of times, then it might not be necessary at all. Just remember that you're trying to introduce <em>convenience</em> and save time.</p>
+    <p>Some possible use cases for creating custom variables or mixins are:</p>
+    <ul>
+        <li>Reusing dominant colors from the theme.</li>
+        <li>Referencing height values.</li>
+        <li>Projects that are duplicated and change the color theme.</li>
+    </ul>
+</div>
+
+<div class="article-description">
+    <h3>Setting Main Background Colors</h3>
+    <p>Don't forget to override the <code>@html-bg</code> and <code>@body-bg</code> variables. Typically, the <code>@html-bg</code> color will be set to the bottom-most, dominant pixel color in the footer.</p>
+</div>
+
+<div class="article-description">
+    <h3>Overriding Generic Base Values</h3>
+    <p>Several of the default values for core variables are referencing a <em>generic base value</em> such as borders, padding, media queries or font families. These base values are there to expedite the styling process and enforce consistency across the styleguide. For example, changing any of the padding base values may cause drastic changes so make sure you know what you are affecting before changing these values.</p>
+</div>

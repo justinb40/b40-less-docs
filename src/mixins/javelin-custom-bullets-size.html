@@ -1,0 +1,69 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-custom-bullets-size <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-custom-bullets(@bg-size)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set a custom <code>background-size</code> property for custom list bullets in Javelin modules when dealing with retina display.</p>
+    
+    <div class="article-tip">
+        <h4>Retina Display</h4>
+        <p>This mixin still requires you to wrap your own call to the mixin with a media query for targeting retina display.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bg-size</code></th>
+                <td>The background image size.</td>
+                <td>width height</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .javelin-custom-bullets-size(96px 16px);
+}
+
+
+// Will output...
+@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .javelin_textItem ul li,
+    .javelin_rotatorItem ul li,
+    .javelin_calendarEventBody ul li,
+    .javelin_blogPostDescription ul li,
+    .javelin_faqQuestions ul li,
+    .javelin_faqItemAnswer ul li,
+    .javelin_links ul li,
+    .javelin_staffBody ul li,
+    .cms-tabs-panel ul li {
+        background-size: 96px 16px;
+    }
+}
+</pre>
+</div>

@@ -1,0 +1,59 @@
+<div class="article-header">
+    <h2 class="article-title">hr-size <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.hr-size(@size; @side)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set sizing metrics for a horizontal rule.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>size</code></th>
+                <td>Border width.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>side</code></th>
+                <td><span class="label label-primary">Optional</span> Which side of the border should be sized.</td>
+                <td>keyword</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-hr {
+    .hr-size(3px; top);
+}
+
+
+// Will output...
+.example-hr {
+    border-top-width: 3px;
+}
+</pre>
+</div>

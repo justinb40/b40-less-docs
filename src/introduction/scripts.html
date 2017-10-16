@@ -1,0 +1,23 @@
+<div class="article-header">
+    <h1 class="article-title">Scripts</h1>
+</div>
+
+<div class="article-description">
+    <p>Some of the components found in the LESS framework only come to life through JavaScript. There are also a few other scripts that don't pertain to built-in components, but still deliver additional functionality that is customizable through HTML5 <code>data-</code> attributes.</p>
+    
+    <div class="article-tip">
+        <h4>Location on filesystem</h4>
+        <p>All minified scripts for the LESS framework are stored in the <code>/public/scripts/less/</code> directory.</p>
+    </div>
+</div>
+
+<div class="article-description">
+    <h3>Including Scripts</h3>
+    <p>Scripts should be included at the end of the DOM, just before the closing <code>&lt;/body&gt;</code> tag. Including them at the end of the DOM guarantees that element selectors will locate matching elements without issues due to the fact that the entire DOM has been loaded. This does not include dynamically loaded elements.</p>
+</div>
+
+<div class="article-description">
+    <h3>Common Functions</h3>
+    <p>All sites using the LESS framework should include include the necessary "common" script for the framework. This script acts as the main script for any site using the LESS framework and many of the built-in components and styles depend on it.</p>
+    <p><a ui-sref="doc.article({ path: 'introduction/scripts/common.html' })">See full details of the <code>less.common.js</code> API</a></p>
+</div>

@@ -1,0 +1,41 @@
+<div class="article-header">
+    <h2 class="article-title">text-overflow <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.text-overflow()</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Truncate the text in a block element and append an ellipsis (...) at the end.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <p>None.</p>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example {
+    .text-overflow();
+    
+    // Only display as much text that will within 300px
+    width: 300px;
+}
+
+
+// Will output...
+.example {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    width: 300px;
+}
+</pre>
+</div>

@@ -1,0 +1,153 @@
+<div class="article-header">
+    <h1 class="article-title">Simple Modal <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Use the Simple Modal jQuery plugin to easily display content within a modal overlay. This component will set some basic styles for the modal container and the modal close button.</p>
+    <p>When displaying an embedded video within the modal, you can use the <code>data-simplemodal="open-simplemodal-video"</code> attribute on a <code>&lt;a&gt;</code> element to automatically configure Simple Modal to embed and display the video from the <code>href</code> attribute. See below for implementation details.</p>
+    
+    <p><a href="http://ericmmartin.com/projects/simplemodal/">Official Simple Modal Documentation</a></p>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>This component relies on additional logic to handle the <a href="http://ericmmartin.com/projects/simplemodal/">Simple Modal</a> plugin. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/simplemodal.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+    
+    <div class="article-tip">
+        <h4>Alertnative JavaScript Dependency</h4>
+        <p>This component relies on additional logic to handle loading videos in the modal. Include this script along with the ones listed above.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.simplemodal-video.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>simplemodal-close</code></th>
+                <td>Close button for the modal.</td>
+            </tr>
+            <tr>
+                <th><code>simplemodal-container</code></th>
+                <td>Main container for the modal.</td>
+            </tr>
+            <tr>
+                <th><code>simplemodal-data</code></th>
+                <td>Container for the modal content.</td>
+            </tr>
+            <tr>
+                <th><code>simplemodal-overlay</code></th>
+                <td>Container for the background overlay.</td>
+            </tr>
+            <tr>
+                <th><code>simplemodal-wrap</code></th>
+                <td>Additional wrapper within the <code>modal-container</code>. Honestly not sure what its real purpose is.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>JS API</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>data-simplemodal</code></th>
+                <td>Set the value of this attribute to <code>open-simplemodal-video</code> on a clickable element to open its <code>href</code> attribute into the modal as an embedded video.</td>
+            </tr>
+            <tr>
+                <th><code>data-width</code></th>
+                <td>Set the width for the video that will be loaded into the modal. Defaults to <code>800</code>.</td>
+            </tr>
+            <tr>
+                <th><code>data-height</code></th>
+                <td>Set the height for the video that will be loaded into the modal. Defaults to <code>450</code>.</td>
+            </tr>
+            <tr>
+                <th><code>data-autoplay</code></th>
+                <td>Set the flag for whether or not to immediately play the video once the modal is open. Defaults to <code>0</code>.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;a href="//player.vimeo.com/video/142512345" class="btn btn-default" data-simplemodal="open-simplemodal-video" data-autoplay="1"&gt;Open Video&lt;/a&gt;
+</pre>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>JavaScript Events</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40.simplemodal.open</code></th>
+                <td>Broadcast when the modal is opened and runs the <code>onOpen()</code> callback.</td>
+            </tr>
+            <tr>
+                <th><code>b40.simplemodal.close</code></th>
+                <td>Broadcast when the modal is closed and runs the <code>onClose()</code> callback.</td>
+            </tr>
+            <tr>
+                <th><code>b40.simplemodal.open</code></th>
+                <td>Broadcast when the modal is shown and runs the <code>onShow()</code> callback.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Using Events</h3>
+<pre prism="javascript">
+// Bind to the `document` to listen for Simple Modal events
+$('body').bind('b40.simplemodal.open', function(dialog) {
+    // `dialog` is passed from the Simple Modal `onOpen` callback (same with other events)
+});
+</pre>
+</div>

@@ -1,0 +1,159 @@
+<div class="article-header">
+    <h1 class="article-title">Responsive Navigation Elements <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>In addition to the <a ui-sref="doc.article({ path: 'components/page.html' })">page component</a>, there is an assortment of <code>page-nav</code> classes that work together to provide tools to build mobile and responsive navigation.</p>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>The responsive <code>page-nav</code> elements rely on additional logic to handle revealing and dismissing the navigation panels. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+<pre><code>
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.nav-toggle.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>fixed-when-active</code></th>
+                <td>Set the affected element to be fixed to the top of the viewport when the <code>nav-is-active</code> class is applied to the body. Typically applied to the <code>page-nav</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-body</code></th>
+                <td>Container wrapper for the navigation menu and/or other visible content that is toggled.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-content</code></th>
+                <td>The scrollable portion of the navigation menu. This class exists separately to make development and debugging easier and must be included immediately inside of <code>page-nav-body</code>.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-fade</code></th>
+                <td>Modifier class for making the <code>page-nav-body</code> element fade in.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-header</code></th>
+                <td>While <em>somewhat</em> optional, this element is fixed to the top of the <code>page-nav</code> element when the <code>nav-is-active</code> class is applied to the body. Typically contains the page logo and the navicon element.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-left</code></th>
+                <td>Float this element to the left for breakpoints at or ABOVE the navigation breakpoint. Typically applied to the <code>page-nav-header</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-right</code></th>
+                <td>Float this element to the right for breakpoints BELOW the navigation breakpoint. Typically applied to the <code>page-nav-body</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-slide-down</code></th>
+                <td>Modifier class for making the <code>page-nav-body</code> element slide in from the <em>top</em> of the viewport. <em>(See <a href="#" ui-sref="src.article({ path: 'components/page.less' })">source code</a> for a description of the flaws with this class)</em></td>
+            </tr>
+            <tr>
+                <th><code>page-nav-slide-left</code></th>
+                <td>Modifier class for making the <code>page-nav-body</code> element slide in from the <em>right</em> side of the viewport.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-slide-right</code></th>
+                <td>Modifier class for making the <code>page-nav-body</code> element slide in from the <em>left</em> side of the viewport.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-slide-up</code></th>
+                <td>Modifier class for making the <code>page-nav-body</code> element slide in from the <em>bottom</em> of the viewport.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-spacer</code></th>
+                <td>Because the <code>nav-is-active</code> state will cause a few elements to be pulled from the DOM and fixed to the viewport, the page will appear to "jump up". This convenience class that will apply the same value of <code>@page-nav-header-height</code> to the height of an element to reserve the space once occupied by those fixed elements. If the height applied is not sufficient, then simply override the values in the theme file with your own implementation. Typically applied to the <code>page-header</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>page-nav-wrapper</code></th>
+                <td>Handle <code>container</code> and <code>container-fluid</code> elements by removing their padding and max-width below the navigation breakpoint.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;header class="page-header page-nav-wrapper page-nav-spacer"&gt;
+    &lt;nav class="page-nav fixed-when-active"&gt;
+        &lt;div class="container"&gt;
+            
+            &lt;div class="page-nav-header page-nav-left"&gt;
+                &lt;h2 class="logo"&gt;
+                    &lt;a href="/"&gt;
+                        &lt;img src="/sites/back40design/templates/default/images/logo.jpg" alt="Back40 Design"&gt;
+                    &lt;/a&gt;
+                &lt;/h2&gt;
+                
+                &lt;button type="button" class="navicon navicon-dismissible" data-toggle-nav="#nav-menu"&gt;
+                    &lt;span class="sr"&gt;Toggle Navigation&lt;/span&gt;
+                    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+                &lt;/button&gt; 
+            &lt;/div&gt;
+            
+            &lt;div class="page-nav-body page-nav-right page-nav-slide-left page-nav-fade" id="nav-menu"&gt;
+                &lt;div class="page-nav-content"&gt;
+                    &lt;!nav id="nav" type="nested" /!&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</pre>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>JavaScript Events</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40.nav.toggled</code></th>
+                <td>Broadcast when the navigation is toggled.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Using Events</h3>
+<pre prism="javascript">
+// Bind to the `body` to listen for navigation events
+$('body').bind('b40.nav.toggled', function(event, data) {
+    // `data.isActive` is a boolean indicating whether or not the navigation is currently active
+    console.log('Navigation active state: ' + `data.isActive);
+});
+</pre>
+</div>

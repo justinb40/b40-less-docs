@@ -1,0 +1,78 @@
+<div class="article-header">
+    <h2 class="article-title">button-size <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.button-size(@height; @font-size; @line-height; @padding-horz; @border-radius)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set sizing metrics for a button.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>height</code></th>
+                <td>Total height of the button.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>font-size</code></th>
+                <td>Font size.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>line-height</code></th>
+                <td>Line height.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>padding-horz</code></th>
+                <td><span class="label label-primary">Optional</span> Left and right padding.</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <th><code>border-radius</code></th>
+                <td><span class="label label-primary">Optional</span> Border radius size.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.btn-example {
+    .button-size(30px; 12px; 1.5);
+}
+
+
+// Will output...
+.btn-example {
+    height: 30px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+</pre>
+</div>

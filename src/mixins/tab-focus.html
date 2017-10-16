@@ -1,0 +1,43 @@
+<div class="article-header">
+    <h2 class="article-title">tab-focus <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.tab-focus()</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>This accessibility feature will set the <code>outline</code> property to indicate when an element has focus.</p>
+    
+    <div class="article-tip">
+        <p>You must call this mixin within the <code>:focus</code> state selector.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <p>None.</p>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+a:focus {
+    .tab-focus();
+}
+
+
+// Will output...
+a:focus {
+    // Default
+    outline: thin dotted;
+     
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+</pre>
+</div>

@@ -1,0 +1,73 @@
+<div class="article-header">
+    <h2 class="article-title">gradient.vertical-three-colors <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>#gradient.vertical-three-colors(@start-color; @mid-color; @end-color; @mid-percent)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply a vertical, three-color gradient to the <code>background-image</code> property of an element.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>start-color</code></th>
+                <td>Top color (start) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>mid-color</code></th>
+                <td>Middle color for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>end-color</code></th>
+                <td>Bottom color (end) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>mid-percent</code></th>
+                <td><span class="label label-primary">Optional</span> Color-stop position for the middle color.</td>
+                <td>percent</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.gradient-example {
+    #gradient.vertical-three-colors(#08c; darken(#08c, 15%); darken(#08c, 30%));
+}
+
+
+// Will output...
+.gradient-example {
+    background-image: -webkit-linear-gradient(top, #0088cc, #005580 50%, #002233);
+    background-image: -o-linear-gradient(top, #0088cc, #005580 50%, #002233);
+    background-image: linear-gradient(to bottom, #0088cc, #005580 50%, #002233);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff002233', GradientType=0);
+}
+</pre>
+</div>

@@ -1,0 +1,63 @@
+<div class="article-header">
+    <h1 class="article-title">Navicon <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Create a pure-css <code>&lt;button&gt;</code> toggle for off-canvas navigation that is positioned to the top right of its container. Alternatively, the navicon can be positioned to the top left by applying <code>left: @navicon-offset-right; right: auto;</code> to the element.</p>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>Using with the <strong>Canvas Panels</strong> component relies on additional logic to handle revealing and dismissing the canvas panels. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+        <p>Optionally, include <code>hammer.min.js</code> to allow the user to dismiss a side panel by swiping.</p>
+<pre><code>
+&lt;script src="public/scripts/hammer.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.canvas-panels.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>navicon</code></th>
+                <td>Container class typically applied to a <code>&lt;button&gt;</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>navicon-bar</code></th>
+                <td>Apply to three <code>&lt;span&gt;</code> elements to create the stack of horizontal lines which act as a visual cue for a sliding menu.</td>
+            </tr>
+            <tr>
+                <th><code>navicon-dismissible</code></th>
+                <td>Apply to the <code>&lt;button&gt;</code> element to convert a group of navicon bars into a "close" icon when the navigation is active. This class assumes that 3 <code>navicon-bar</code> elements are present.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;button type="button" class="navicon navicon-dismissible open-right-canvas"&gt;
+    &lt;span class="sr"&gt;Toggle Navigation&lt;/span&gt;
+    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+    &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+&lt;/button&gt;
+</pre>
+</div>

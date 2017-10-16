@@ -1,0 +1,99 @@
+<h2>Installing New Font Libraries</h2>
+<p>When installing new font libraries you will need various font formats to be uploaded into the public fonts repository. Each font variation will need a corresponding import file which is used later for importing the font.</p>
+
+<h3>Step 1: Generate webfonts</h3>
+<p>Using <a href="http://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel's Webfont Generator</a>, select <em>optimal</em> settings and download the various formats for the webfont you need. You should get the following formats in your download: <code>.eot, .woff, .woff2, .ttf, .svg</code>.</p>
+
+<h3>Step 2: Create a directory to store webfonts</h3>
+<p>Next, create a subdirectory inside of <code>public/fonts/</code>, name it after the new font and upload all of your new font files to this location. The name you choose should be all lowercase, alphanumeric and all one word with dashes separating name segments.</p>
+<p>Below is a brief example of <strong>Proxima Nova "Regular"</strong> font files added to the <code>public/fonts/proximanova/</code> directory.</p>
+
+<pre>
+public/
+└── fonts/
+    └── proximanova/
+       ├── proximanova-regular-webfont.eot
+       ├── proximanova-regular-webfont.svg
+       ├── proximanova-regular-webfont.ttf
+       ├── proximanova-regular-webfont.woff
+       ├── proximanova-regular-webfont.woff2
+       ├── ... and so on.
+</pre>
+
+<h3>Step 3: Create import files</h3>
+<p>For each variation included in our new font library, we need to have a corresponding import file. The names used for the font files should be reflected in the names used in the import files. (i.e. <code>proximanova-semibold-italic.ttf</code> would have an import file named <code>proximanova-semibold-italic.less</code>)</p>
+<p>Below is an example of the full list of Proxima Nova font imports:</p>
+
+<pre>
+public/
+└── less/
+    └── fonts/
+        └── proximanova/
+           ├── proximanova-regular.less
+           ├── proximanova-bold.less
+           ├── proximanova-italic.less
+           ├── proximanova-bolditalic.less
+           │
+           ├── proximanova-semibold.less
+           ├── proximanova-semibold-italic.less
+           │
+           ├── proximanova-light.less
+           ├── proximanova-light-italic.less
+           │
+           ├── proximanova-condensed.less
+           ├── proximanova-condensed-italic.less
+           ├── proximanova-condensed-light.less
+           ├── proximanova-condensed-light-italic.less
+           ├── proximanova-condensed-semibold.less
+           ├── proximanova-condensed-semibold-italic.less
+           │
+           ├── proximanova-condensed-black.less
+           │
+           ├── proximanova-condensed-extrabold.less
+           └── proximanova-condensed-extracondensed-extrabold.less
+</pre>
+
+<h3>4. Configure each import file</h3>
+<p>Each import contains a unique LESS variable and the <code>@font-face</code> definition for the font. For the <code>font-family</code> name, use uppercase camel-case with dashes to separate name segments (i.e. the font name <code>"Proxima Nova Semibold Italic"</code> would be formatted as <code>"ProximaNova-Semibold-Italic"</code>).</p>
+<p>Before moving on, make sure that you have covered each of the following items in the file:</p>
+<ul>
+    <li>Title at the top of the file.</li>
+    <li>Variable name and value with an appropriate font fallback in place.</li>
+    <li>Font family name (see below about character limits).</li>
+    <li>Have the correct value appended to the hash (#) on the SVG line.</li>
+</ul>
+
+<ul class="examples">
+    <li><a href="#usage-fontimport">Practical Example of "Proxima Nova" Import Files</a></li>
+</ul>
+
+<h3>5. Test it!</h3>
+<p>Make sure your new font is loading correctly and everything is named properly. Don't forget to check it in Internet Explorer.</p>
+
+<h3>Character Limit in Internet Explorer</h3>
+<p>In Internet Explorer, there is a 31 character limit for the <code>font-family</code> definition inside of a <code>@font-face</code> rule. If you are unsure of the length of the name you chose then you can use this lazy solution for validating the string length.</p>
+<p>In the code below, copy and paste the commented line right above the <code>font-family</code> line.</p>
+
+<pre>
+//  font-family: "1234567890123456789012345678901";
+</pre>
+<pre>
+// Comfortably within the limit
+@font-face {
+//  font-family: "1234567890123456789012345678901";
+    font-family: "ProximaNova-Regular";
+}
+
+
+// Exactly on the character limit
+@font-face {
+//  font-family: "1234567890123456789012345678901";
+    font-family: "ProximaNova-CondSemibold-Italic";
+}
+
+// Over the character limit (IE will ignore this font)
+@font-face {
+//  font-family: "1234567890123456789012345678901";
+    font-family: "ProximaNova-Condensed-Semibold-Italic";
+}
+</pre>

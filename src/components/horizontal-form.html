@@ -1,0 +1,62 @@
+<div class="article-header">
+    <h1 class="article-title">Horizontal Form <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Use grid classes to align labels and groups of form controls in a horizontal layout. Doing so changes <a ui-sref="doc.article({ path: 'components/form-blocks.html' })"><code>form-group</code></a> elements to behave as grid rows, so there is no need to use the <a ui-sref="doc.article({ path: 'components/grid.html' })"><code>row</code></a> class in this context.</p>
+    
+    <div class="article-tip">
+        <p>When <code>@is-responsive</code> is set to <code>true</code>, styling only applies to labels within viewports that are at least <code>768px</code>.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>form-horizontal</code></th>
+                <td>Apply to either a <code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code> or <code>&lt;div&gt;</code> to enable properties for horizontal form layout.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;form action="#" method="post" class="form-horizontal"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="grid-3"&gt;First Name&lt;/label&gt;
+        &lt;div class="grid-9"&gt;
+            &lt;input type="text" class="form-control" placeholder="First Name"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="grid-3"&gt;Last Name&lt;/label&gt;
+        &lt;div class="grid-9"&gt;
+            &lt;input type="text" class="form-control" placeholder="Last Name"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="grid-3"&gt;Email&lt;/label&gt;
+        &lt;div class="grid-9"&gt;
+            &lt;input type="text" class="form-control" placeholder="Email"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+</div>

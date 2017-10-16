@@ -1,0 +1,83 @@
+<div class="article-header">
+    <h2 class="article-title">custom-bolditalic <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.custom-bolditalic(@bolditalic-family)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set correct font styles and font families for custom fonts inside <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;i&gt;</code> and <code>&lt;em&gt;</code> tags.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bold-family</code></th>
+                <td>Font family to use for bold formatting.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <th><code>italic-family</code></th>
+                <td>Font family to use for italic formatting.</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <th><code>bolditalic-family</code></th>
+                <td>Font family to use for bold italic formatting.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.custom-bolditalic(@font-family-proximanova-bold; @font-family-proximanova-italic; @font-family-proximanova-bolditalic);
+
+
+// Will output...
+b,
+strong {
+    font-family: ProximaNova-Bold, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+i,
+em {
+    font-family: ProximaNova-Italic, Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+
+b em,
+b i,
+em b,
+em strong,
+i b,
+i strong,
+strong em,
+strong i {
+    font-family: ProximaNova-BoldItalic, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+</pre>
+</div>

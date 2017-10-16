@@ -1,0 +1,48 @@
+<div class="article-header">
+    <h2 class="article-title">visibility <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.visibility()</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set an element to display as <strong>block</strong>.</p>
+    
+    <div class="article-tip">
+        <p>This is typically only used within the definitions of the responsive visibility classes.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <p>None.</p>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example {
+    .visibility();
+}
+
+
+// Will output...
+.example {
+    display: block !important;
+}
+table.example {
+    display: table !important;
+}
+tr.example {
+    display: table-row !important;
+}
+th.example,
+td.example {
+    display: table-cell !important;
+}
+</pre>
+</div>

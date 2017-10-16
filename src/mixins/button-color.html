@@ -1,0 +1,114 @@
+<div class="article-header">
+    <h2 class="article-title">button-color <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.button-color(@bg; @color; @border; @hover-bg; @hover-color; @hover-border)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Sets color properties for <code>static</code>, <code>:hover</code>, <code>:focus</code>, <code>:active</code> and <code>disabled</code> options for buttons.</p>
+    
+    <div class="article-tip">
+        <h4>Optional Arguments</h4>
+        <p>If hover state colors are omitted in the arguments list, those values are still set as darkened versions of the first set of colors.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bg</code></th>
+                <td>Background color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>color</code></th>
+                <td>Text color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>border</code></th>
+                <td>Border color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-bg</code></th>
+                <td><span class="label label-primary">Optional</span> Background color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-color</code></th>
+                <td><span class="label label-primary">Optional</span> Text color for hover states.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>hover-border</code></th>
+                <td><span class="label label-primary">Optional</span> Border color for hover states.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.btn-example {
+    .button-color(#08c; #fff; #08c; darken(#08c, 15%); darken(#fff, 15%); darken(#08c, 15%));
+}
+
+
+// Will output...
+.btn-example {
+    background-color: #08c;
+    border-color: #08c;
+    color: #fff;
+}
+
+.btn-example:hover,
+.btn-example:focus,
+.btn-example:active,
+.btn-example.active {
+    background-color: #005580;
+    border-color: #005580;
+    color: #d9d9d9;
+}
+
+.btn-example.disabled,
+.btn-example.disabled:hover,
+.btn-example.disabled:focus,
+.btn-example.disabled:active,
+.btn-example.disabled.active,
+.btn-example[disabled],
+.btn-example[disabled]:hover,
+.btn-example[disabled]:focus,
+.btn-example[disabled]:active,
+.btn-example[disabled].active,
+fieldset[disabled] .btn-example,
+fieldset[disabled] .btn-example:hover,
+fieldset[disabled] .btn-example:focus,
+fieldset[disabled] .btn-example:active,
+fieldset[disabled] .btn-example.active {
+    background-color: #005580;
+    border-color: #005580;
+}
+</pre>
+</div>

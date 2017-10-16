@@ -1,0 +1,58 @@
+<div class="article-header">
+    <h1 class="article-title">Inline Form <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Wrap form content with <code>.form-inline</code> for left-aligned and <code>inline-block</code> form controls.</p>
+    <p>The <a ui-sref="doc.article({ path: 'helpers/form-control.html' })"><code>form-control</code></a> class has <code>width: 100%;</code> applied by default. Within inline forms, we reset that to <code>width: auto;</code> so multiple controls can reside on the same line. Depending on your layout, specifying an inline <code>[style]</code> attribute for a custom width may be required.</p>
+    
+    <div class="article-tip">
+        <p>When <code>@is-responsive</code> is set to <code>true</code>, this only applies to forms within viewports that are at least <code>768px</code> wide.</p>
+    </div>
+    
+    <div class="article-tip">
+        <p>Screen readers will have trouble with your forms if you don't include a <code>&lt;label&gt;</code> with every <code>&lt;input&gt;</code>.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>form-inline</code></th>
+                <td>Apply to either a <code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code> or <code>&lt;div&gt;</code> to enable properties for inline form layout.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;form action="#" method="post" class="form-inline"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="sr"&gt;First Name&lt;/label&gt;
+        &lt;input type="text" class="form-control" placeholder="Username"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="sr"&gt;Last Name&lt;/label&gt;
+        &lt;input type="password" class="form-control" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="btn btn-default"&gt;Login&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+</div>

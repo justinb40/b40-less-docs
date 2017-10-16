@@ -1,0 +1,73 @@
+<div class="article-header">
+    <h2 class="article-title">gradient.vertical <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>#gradient.vertical(@start-color; @end-color; @start-percent; @end-percent)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply a vertical, two-color gradient to the <code>background-image</code> property of an element.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>start-color</code></th>
+                <td>Left color (start) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>end-color</code></th>
+                <td>Right color (end) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>start-percent</code></th>
+                <td><span class="label label-primary">Optional</span> Color-stop position for the start color.</td>
+                <td>percent</td>
+            </tr>
+            <tr>
+                <th><code>end-percent</code></th>
+                <td><span class="label label-primary">Optional</span> Color-stop position for the end color.</td>
+                <td>percent</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.gradient-example {
+    #gradient.vertical(#08c; darken(#08c, 15%));
+}
+
+
+// Will output...
+.gradient-example {
+    background-image: -webkit-linear-gradient(top, #08c 0%, #005580 100%);
+    background-image: -o-linear-gradient(top, #08c 0%, #005580 100%);
+    background-image: linear-gradient(to bottom, #08c 0%, #005580 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff005580', GradientType=0); 
+}
+</pre>
+</div>

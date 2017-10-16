@@ -1,0 +1,67 @@
+<div class="article-header">
+    <h2 class="article-title">defer-typekit-styles <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.defer-typekit-styles(@beforeRules; @afterRules)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Some custom fonts may look drastically different in size while Typekit is initializing itself and loading your custom fonts. To prevent the flash of unstyled content (FOUC), use this mixin to provide a <em>before</em> ruleset to help maintain spacing and layout and an <em>after</em> ruleset to apply the final styling that uses properties for the custom font.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>before-rules</code></th>
+                <td>The styling rules to apply <em>before</em> Typekit has fully loaded custom fonts.</td>
+                <td>ruleset</td>
+            </tr>
+            <tr>
+                <th><code>after-rules</code></th>
+                <td>The styling rules to apply <em>after</em> Typekit has fully loaded custom fonts.</td>
+                <td>ruleset</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+h1 {
+    .defer-typekit-styles({
+        font-size: floor(@h1-size / 2);
+    }; {
+        font-size: @h1-size;
+    });
+}
+
+
+// Will output...
+h1 {
+    font-size: 16px;
+}
+
+.wf-active h1 {
+    font-size: 32px;
+}
+</pre>
+</div>

@@ -1,0 +1,72 @@
+<div class="article-header">
+    <h2 class="article-title">alert-color <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.alert-color(@bg; @border; @color)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set color properties of an alert box. Additionally, colors for <code>&lt;hr&gt;</code> tags and the <code>.alert-link</code> class are automatically darkened using the colors provided.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bg</code></th>
+                <td>Background color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>border</code></th>
+                <td>Border color.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>color</code></th>
+                <td>Text color.</td>
+                <td>color</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.alert-example {
+    .alert-color(#08c; #08c; #fff);
+}
+
+
+// Will output...
+.alert-example {
+    background-color: #08c;
+    border-color: #08c;
+    color: #fff;
+}
+.alert-example hr {
+    border-color: #069;
+}
+.alert-example .alert-link {
+    color: #f2f2f2;
+}
+</pre>
+</div>

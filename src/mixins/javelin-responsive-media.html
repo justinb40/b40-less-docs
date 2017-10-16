@@ -1,0 +1,106 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-responsive-media <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-responsive-media(@selector)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>When dealing with responsive media like images or iframes, this function can be used to make those objects responsive.</p>
+    
+    <div class="article-tip">
+        <p>Selector stacks will not work with the <code>@selector</code> argument. Only single selectors will correctly accept the styling from the mixin.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>selector</code></th>
+                <td>A single class name selector (without the decimal) to apply the mixin rules.</td>
+                <td>keyword</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-responsive-media(javelin_textItem);
+
+
+// Will output...
+.javelin_textItem {
+    img,
+    iframe {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto !important;
+        
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+    
+    iframe {
+        max-width: 100%;
+    }
+}
+
+
+// This type of thing...
+.javelin-responsive-media(~".javelin_textItem, .javelin_galleryItem, .javelin_faqItem");
+
+// Fails in LESS...
+// (an additional decimal is created and the img and iframe selectors do not apply to every selector in the stack)
+..javelin_textItem,
+.javelin_galleryItem,
+.javelin_faqItem img,
+..javelin_textItem,
+.javelin_galleryItem,
+.javelin_faqItem iframe {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+..javelin_textItem,
+.javelin_galleryItem,
+.javelin_faqItem img {
+    max-width: 100%;
+    height: auto !important;
+    
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+..javelin_textItem,
+.javelin_galleryItem,
+.javelin_faqItem iframe {
+    max-width: 100%;
+}
+</pre>
+</div>

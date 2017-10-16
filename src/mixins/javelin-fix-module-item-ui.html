@@ -1,0 +1,54 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-fix-module-item-ui <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-fix-module-item-ui(@module)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>By default, Javelin relies on static positioning to set a position on certain admin interface elements which can sometimes prevent the module actions from properly positioning near its module item.</p>
+    <p>This mixin will help correct this issue by applying a <code>top</code> and <code>left</code> positions equal to <code>0</code> to the module actions.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>module</code></th>
+                <td>The module shortname to use in the element selector.</td>
+                <td>keyword</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-fix-module-item-ui(directory);
+
+
+// Will output...
+.javelin_module-directory .javelin_moduleContent {
+    top: 0 !important;
+    left: 0 !important;
+}
+</pre>
+</div>

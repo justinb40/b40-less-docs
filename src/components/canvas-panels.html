@@ -1,0 +1,159 @@
+<div class="article-header">
+    <h1 class="article-title">Canvas Panels <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Off-canvas navigation made easy. Side panels may be toggled by using either the <code>.open-left-canvas</code> or the <code>.open-right-canvas</code> class on a button control.</p>
+    
+    <div class="article-tip">
+        <h4>JavaScript Dependency</h4>
+        <p>This component relies on additional logic to handle revealing and dismissing the canvas panels. Include these scripts at the bottom of your document before the closing <code>&lt;/body&gt;</code> tag.</p>
+        <p>Optionally, include <code>hammer.min.js</code> to allow the user to dismiss a side panel by swiping.</p>
+<pre><code>
+&lt;script src="public/scripts/hammer.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.common.min.js"&gt;&lt;/script&gt;
+&lt;script src="public/scripts/less/less.canvas-panels.min.js"&gt;&lt;/script&gt;
+</code></pre>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>canvas</code></th>
+                <td>Container for the main panel which should contain the content of the page. This element will shift to the left or right when it is the descendant of either the <code>canvas-left-is-open</code> or <code>canvas-right-is-open</code> class.</td>
+            </tr>
+            <tr>
+                <th><code>canvas-left</code></th>
+                <td>Container for the left canvas panel.</td>
+            </tr>
+            <tr>
+                <th><code>canvas-right</code></th>
+                <td>Container for the right canvas panel.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-params">
+    <h3>JavaScript Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>open-left-canvas</code></th>
+                <td>Use this class on a clickable element to toggle the <code>canvas-left-is-open</code> class on the <code>&lt;body&gt;</code>, which toggles the visibility of the left canvas panel.</td>
+            </tr>
+            <tr>
+                <th><code>open-right-canvas</code></th>
+                <td>Use this class on a clickable element to toggle the <code>canvas-right-is-open</code> class on the <code>&lt;body&gt;</code>, which toggles the visibility of the right canvas panel.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="page"&gt;
+    &lt;div class="canvas"&gt;
+        &lt;header class="page-header"&gt;
+            
+            &lt;h2 class="logo"&gt;
+                &lt;img src="/sites/sitename/templates/mobile/images/logo@2x.png" alt="Sitename"&gt;
+            &lt;/h2&gt;
+            &lt;button type="button" class="navicon open-right-canvas"&gt;
+                &lt;span class="sr"&gt;Toggle Navigation&lt;/span&gt;
+                &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+                &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+                &lt;span class="navicon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            
+        &lt;/header&gt;
+        
+        &lt;main class="page-main"&gt;
+            ...
+        &lt;/main&gt;
+        
+        &lt;footer class="page-footer"&gt;
+            ...
+        &lt;/footer&gt;
+    &lt;/div&gt;
+    &lt;div class="canvas-right"&gt;
+        &lt;!nav id="nav" type="nested" /!&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
+
+<hr>
+
+<div class="article-params">
+    <h3>JavaScript Events</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>b40.canvas.left.open</code></th>
+                <td>Broadcast when the left canvas panel is opened.</td>
+            </tr>
+            <tr>
+                <th><code>b40.canvas.right.open</code></th>
+                <td>Broadcast when the right canvas panel is opened.</td>
+            </tr>
+            <tr>
+                <th><code>b40.canvas.left.closed</code></th>
+                <td>Broadcast when the left canvas panel is closed.</td>
+            </tr>
+            <tr>
+                <th><code>b40.canvas.right.closed</code></th>
+                <td>Broadcast when the right canvas panel is closed.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Using Events</h3>
+<pre prism="javascript">
+// Bind to the `document` to listen for canvas panel events
+$('body').bind('b40.canvas.right.open', function() {
+    // code goes here
+});
+</pre>
+</div>

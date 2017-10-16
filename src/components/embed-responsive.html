@@ -1,0 +1,58 @@
+<div class="article-header">
+    <h1 class="article-title">Embed Responsive <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Automatically control the aspect ratio for embedded media, such as an embedded YouTube video.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>embed-responsive</code></th>
+                <td>Wrap embedded media with this class to enable responsive embed behavior.</td>
+            </tr> 
+            <tr>
+                <th><code>embed-responsive-item</code></th>
+                <td>An optional class to increase style specification for the embedded media. It is not typically necessary to use this class unless styling is present that is affecting the dimensions of the embedded media.</td>
+            </tr>
+            <tr>
+                <th><code>embed-responsive-16x9</code></th>
+                <td>Widescreen aspect ratio.</td>
+            </tr>
+            <tr>
+                <th><code>embed-responsive-4x3</code></th>
+                <td>Standard aspect ratio.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="embed-responsive embed-responsive-16x9"&gt;
+    &lt;iframe src="http://youtube.com/embed/1234567890" allowTransparency="true" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- If styling is present that is affecting the dimensions of the embedded media, using the 'embed-responsive-item' class will help work around that. --&gt;
+&lt;div class="embed-responsive embed-responsive-16x9"&gt;
+    &lt;iframe src="http://youtube.com/embed/1234567890" allowTransparency="true" frameborder="0" class="embed-responsive-item"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</pre>
+</div>

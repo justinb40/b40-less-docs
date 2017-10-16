@@ -1,0 +1,67 @@
+<div class="article-header">
+    <h2 class="article-title">gradient.directional <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>#gradient.directional(@start-color; @end-color; @angle)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply a directional gradient to the <code>background-image</code> property of an element.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>start-color</code></th>
+                <td>Top color (start) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>end-color</code></th>
+                <td>Bottom color (end) for the gradient image.</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <th><code>angle</code></th>
+                <td><span class="label label-primary">Optional</span> The angle of the direction, specified in degrees.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.gradient-example {
+    #gradient.directional(#08c; darken(#08c, 15%));
+}
+
+
+// Will output...
+.gradient-example {
+    background-image: -webkit-linear-gradient(45deg, #08c, #005580);
+    background-image: -o-linear-gradient(45deg, #08c, #005580);
+    background-image: linear-gradient(45deg, #08c, #005580);
+    background-repeat: repeat-x;
+}
+</pre>
+</div>

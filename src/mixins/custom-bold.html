@@ -1,0 +1,54 @@
+<div class="article-header">
+    <h2 class="article-title">custom-bold <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.custom-bold(@bold-family)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Set correct font styles and font families for custom fonts inside <code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code> tags.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>bold-family</code></th>
+                <td>Font family to use for bold formatting.</td>
+                <td>string</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.custom-bold(@font-family-proximanova-bold);
+
+
+// Will output...
+b,
+strong {
+    font-family: ProximaNova-Bold, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+</pre>
+</div>

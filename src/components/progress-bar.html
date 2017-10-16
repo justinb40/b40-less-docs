@@ -1,0 +1,64 @@
+<div class="article-header">
+    <h1 class="article-title">Progress Bar <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>Provide feedback on the progress of a goal or a process with simple yet flexible progress bars.</p>
+    
+    <div class="article-tip">
+        <h4>Sizing of Progress Bar Segments</h4>
+        <p>Use a <code>[style]</code> attribute to control the size of the <code>progress</code> element.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>progress-bar</code></th>
+                <td>Container for a progress bar element.</td>
+            </tr>
+            <tr>
+                <th><code>progress</code></th>
+                <td>A single segment within a <code>progress-bar</code> element, typically applied to a <code>&lt;div&gt;</code> element.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="progress-bar"&gt;
+    &lt;div class="progress" style="width: 50%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- With % label --&gt;
+&lt;div class="progress-bar"&gt;
+    &lt;div class="progress" style="width: 50%;"&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- With % label that is only viewable to screen-readers --&gt;
+&lt;div class="progress-bar"&gt;
+    &lt;div class="progress" style="width: 50%;"&gt;
+        &lt;span class="sr"&gt;50%&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>

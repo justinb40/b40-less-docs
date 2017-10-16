@@ -1,0 +1,72 @@
+<div class="article-header">
+    <h2 class="article-title">make-grid-column-default <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.make-grid-column-default(@gutter)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Apply default grid column properties.</p>
+    
+    <div class="article-tip">
+        <p>When using this mixin, you still need to define a <em>width</em> and a <em>float</em> for the column.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>gutter</code></th>
+                <td><span class="label label-primary">Optional</span> Gutter width.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-column {
+    .make-grid-column-default(30px);
+    
+    // You must still set a width and a float
+    width: 20%;
+    float: left;
+}
+
+
+// Will output...
+.example-column {
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    
+    width: 20%;
+    float: left;
+    
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+</pre>
+</div>

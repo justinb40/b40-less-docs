@@ -1,0 +1,155 @@
+<div class="article-header">
+    <h1 class="article-title">Blog <small>module</small></h1>
+    
+    <div class="article-subtitle">
+        <code>#javelin-blog</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>A core Javelin module for creating a blog. Aside from blog post styling, this component also generates styling for the pager, blog, rss link and tag cloud.</p>
+    
+    <div class="article-tip">
+        <h4>Display Order</h4>
+        <p>By default, the LESS component for this module will generate styles that expect the blog post image to appear first in the display order, followed by the title, which is followed by either the date or summary.</p>
+    </div>
+    
+    <div class="article-tip">
+        <h4>Thumbnail Sizing</h4>
+        <p>The size of the thumbnail generated through module settings that are editable by the user should be handled with CSS as well as module settings. To set this size globally, override the <code>@blog-post-thumb-width</code> var. To set this value on individual blog modules, you have to manually provide the CSS to handle the sizing.</p>
+    </div>
+</div>
+
+
+<div class="article-params">
+    <h3>Mixins for Legacy Selectors</h3>
+    <p>Source: <code>/less/javelin/blog.less</code></p>
+    
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Mixin</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>backlink</code></th>
+                <td>The "go back" link on the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>comments</code></th>
+                <td>Container for the comments section of the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>comments-form</code></th>
+                <td>Container for the "add a comment" form in the comments section of the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>comments-item</code></th>
+                <td>A single blog comment item in a list of blog comments.</td>
+            </tr>
+            <tr>
+                <th><code>comments-item-body</code></th>
+                <td>Body block for a blog comment item.</td>
+            </tr>
+            <tr>
+                <th><code>comments-item-date</code></th>
+                <td>Date block for a blog comment item.</td>
+            </tr>
+            <tr>
+                <th><code>comments-item-title</code></th>
+                <td>Title block for a blog comment item.</td>
+            </tr>
+            <tr>
+                <th><code>comments-list</code></th>
+                <td>List of comments in the comments section of the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>comments-title</code></th>
+                <td>Title block for the comments section of the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>details-view</code></th>
+                <td>Container for the blog details view.</td>
+            </tr>
+            <tr>
+                <th><code>index-view</code></th>
+                <td>Container for the blog index view.</td>
+            </tr>
+            <tr>
+                <th><code>pager</code></th>
+                <td>Container for the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>pager-item</code></th>
+                <td>A single item in the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>pager-item-link</code></th>
+                <td>A clickable item in the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>pager-next</code></th>
+                <td>The "next" link in the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>pager-prev</code></th>
+                <td>The "prev" link in the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>pager-prevnext</code></th>
+                <td>The "prev" and "next" links in the blog pager.</td>
+            </tr>
+            <tr>
+                <th><code>post</code></th>
+                <td>A single blog post item in a list of blog posts.</td>
+            </tr>
+            <tr>
+                <th><code>post-body</code></th>
+                <td>Body block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-commentslink</code></th>
+                <td>"Add a comment" link for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-date</code></th>
+                <td>Date block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-image</code></th>
+                <td>Image block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-readmore</code></th>
+                <td>"Read More" link for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-summary</code></th>
+                <td>Summary block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>post-title</code></th>
+                <td>Title block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>rss</code></th>
+                <td>RSS link for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>tag</code></th>
+                <td>Individual tags inside a tag block for a blog post item.</td>
+            </tr>
+            <tr>
+                <th><code>tags</code></th>
+                <td>Tag block for a blog post item.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

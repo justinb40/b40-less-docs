@@ -1,0 +1,56 @@
+<div class="article-header">
+    <h2 class="article-title">javelin-fix-module-ui <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.javelin-fix-module-ui(@module)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>By default, Javelin does not set a position on certain admin interface elements which can sometimes prevent the module settings dropdown from staying on top of the module content.</p>
+    <p>This mixin will help correct this issue by applying a <code>relative</code> position to the module content. However, this causes issues with the modal dialog box because the same selector is used there. Luckily, this mixin fixes that problem as well.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>module</code></th>
+                <td>The module shortname to use in the element selector.</td>
+                <td>keyword</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.javelin-fix-module-ui(carousel);
+
+
+// Will output...
+.javelin_module-carousel .javelin_moduleContent {
+    position: relative;
+}
+.javelin_dialog .javelin_module-carousel .javelin_moduleContent {
+    position: static;
+}
+</pre>
+</div>

@@ -1,0 +1,64 @@
+<div class="article-header">
+    <h2 class="article-title">list-inline <small>mixin</small></h2>
+    
+    <div class="article-subtitle">
+        <code>.list-inline(@offset-horz)</code>
+    </div>
+</div>
+
+
+<div class="article-description">
+    <p>Easily put list items into one line and optionally add spacing between each item.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Parameters</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 60%;">
+            <col style="width: 20%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>offset-horz</code></th>
+                <td><span class="label label-primary">Optional</span> Left and right margins.</td>
+                <td>number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="less">
+.example-list {
+    .list-inline(5px);
+}
+
+
+// Will output...
+.example-list li {
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    list-style: none;
+    display: inline-block;
+}
+.example-list li:first-child {
+    margin-left: 0;
+}
+.example-list li:last-child {
+    margin-right: 0;
+}
+</pre>
+</div>

@@ -1,0 +1,72 @@
+<div class="article-header">
+    <h1 class="article-title">Panel <small>component</small></h1>
+</div>
+
+
+<div class="article-description">
+    <p>While not always necessary, sometimes you need to put your DOM in a box that can handle headers, footers and other content containers. For those situations, try the panel component.</p>
+</div>
+
+
+<div class="article-params">
+    <h3>Classes</h3>
+    <table class="table">
+        <colgroup>
+            <col style="width: 30%;">
+            <col style="width: 70%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><code>panel</code></th>
+                <td>Container class typically applied to a <code>&lt;div&gt;</code>.</td>
+            </tr>
+            <tr>
+                <th><code>panel-body</code></th>
+                <td>Container for normal panel content. Tables may be placed outside of this element as an immediate child of the <code>panel</code> element.</td>
+            </tr>
+            <tr>
+                <th><code>panel-footer</code></th>
+                <td>Container for the panel footer.</td>
+            </tr>
+            <tr>
+                <th><code>panel-header</code></th>
+                <td>Container for the panel header.</td>
+            </tr>
+            <tr>
+                <th><code>panel-media</code></th>
+                <td>Container for main panel images or video embedded through an <code>&lt;iframe&gt;</code>.</td>
+            </tr>
+            <tr>
+                <th><code>panel-title</code></th>
+                <td>Apply to a heading tag (probably an <code>&lt;h4&gt;</code>) within a <code>panel-header</code> element.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="article-example">
+    <h3>Usage</h3>
+<pre prism="markup">
+&lt;div class="panel"&gt;
+    &lt;div class="panel-header"&gt;
+        &lt;h4 class="panel-title"&gt;Panel Title&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="panel-media"&gt;
+        &lt;img src="http://dummyimage.com/1600x800/333/fff&text=+"&gt;
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="panel-footer"&gt;
+        &lt;a href="#" class="btn btn-default btn-block"&gt;Learn More&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
